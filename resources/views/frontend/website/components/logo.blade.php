@@ -5,7 +5,7 @@
 ])
 
 @if ($headerLogo)
-    <x-everest::link
+    <x-astronomy::link
         {{ $attributes->merge(['class' => 'inline-flex items-center']) }}
         :href="$homeUrl"
     >
@@ -16,9 +16,9 @@
                 class="absolute inset-0 w-full h-full object-contain"
             />
         </div>
-    </x-everest::link>
+    </x-astronomy::link>
 @else
-    <x-everest::link
+    <x-astronomy::link
         :href="$homeUrl"
         {{ $attributes->merge([
             'class' => '
@@ -32,5 +32,5 @@
         ]) }}
     >
         {{ $headerLogoAltText }}
-    </x-everest::link>
+    </x-astronomy::link>
 @endif

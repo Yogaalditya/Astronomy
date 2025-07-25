@@ -1,13 +1,13 @@
 @php
-    $images = $currentScheduledConference->getMedia('everest-header');
+    $images = $currentScheduledConference->getMedia('astronomy-header');
     $bannerImage = $images->first();
     $bannerUrl = '';
     
     if ($bannerImage) {
-        // Try different size options
-        $bannerUrl = $bannerImage->getAvailableUrl(['thumb-xl']) ?: 
-                     $bannerImage->getAvailableUrl(['thumb']) ?: 
-                     $bannerImage->getUrl();
+        // Use original image for better quality, fallback to smaller sizes
+        $bannerUrl = $bannerImage->getUrl() ?: 
+                     $bannerImage->getAvailableUrl(['thumb-xl']) ?: 
+                     $bannerImage->getAvailableUrl(['thumb']);
         
         // Ensure proper URL format
         if ($bannerUrl && !str_starts_with($bannerUrl, 'http')) {
@@ -16,26 +16,25 @@
     }
     
     // Debug info (remove after testing)
-    // dd('Images count: ' . $images->count() . ', Banner URL: ' . $bannerUrl);
+    //dd('Images count: ' . $images->count() . ', Banner URL: ' . $bannerUrl . ', Image exists: ' . ($bannerImage ? 'Yes' : 'No'));
     
     // Create unique ID for this banner
     $bannerId = 'banner-' . uniqid();
 @endphp
 
-@if($bannerUrl)
-<style>
-    #{{ $bannerId }} {
+<section 
+    id="{{ $bannerId }}" 
+    class="hero-banner relative min-h-screen w-full -mt-16 flex items-center justify-center text-white @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
+    @if($bannerUrl)
+    style="
         background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ $bannerUrl }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-</style>
-@endif
-
-<section id="{{ $bannerId }}" class="hero-banner relative min-h-screen w-full -mt-16 flex items-center justify-center text-white @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif">
-    
+        background-attachment: scroll;
+    "
+    @endif
+>
     <div class="container mx-auto px-4 z-10">
         <div class="text-center max-w-4xl mx-auto">
             <div class="w-full">

@@ -1,7 +1,7 @@
-<x-everest::layouts.main class="min-h-screen bg-gray-50/50 py-16 px-4">
+<x-astronomy::layouts.main class="min-h-screen bg-gray-50/50 py-16 px-4">
     <div class="max-w-lg mx-auto">
         <div class="mb-8">
-            <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-500 hover:text-gray-700 transition-colors" />
+            <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-500 hover:text-gray-700 transition-colors" />
         </div>
 
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100/50 backdrop-blur-sm">
@@ -72,12 +72,12 @@
                             </button>
 
                             @if($registerUrl)
-                                <x-everest::link 
+                                <x-astronomy::link 
                                     class="inline-flex justify-center items-center px-5 py-2.5 bg-white border border-gray-200 text-sm font-medium rounded-xl text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200"
                                     :href="$registerUrl"
                                 >
                                     {{ __('general.register') }}
-                                </x-everest::link>
+                                </x-astronomy::link>
                             @endif
                         </div>
                     </form>
@@ -90,7 +90,7 @@
                             {{ __('general.reset_password_mail_sent') }}
                         </div>
                         
-                        <x-everest::link 
+                        <x-astronomy::link 
                             class="inline-flex justify-center items-center px-5 py-2.5 bg-white border border-gray-200 text-sm font-medium rounded-xl text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200"
                             :href="app()->getLoginUrl()"
                         >
@@ -98,10 +98,10 @@
                                 <path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             {{ __('general.login') }}
-                        </x-everest::link>
+                        </x-astronomy::link>
                     </div>
                 @endif
             </div>
         </div>
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

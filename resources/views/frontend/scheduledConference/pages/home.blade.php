@@ -1,10 +1,10 @@
-<x-everest::layouts.main>
+<x-astronomy::layouts.main>
 
-    <x-everest::layouts.banner></x-everest::layouts.banner>
+    <x-astronomy::layouts.banner></x-astronomy::layouts.banner>
 
     <div class="space-y-8">
         @php
-            $layouts = App\Facades\Plugin::getPlugin('Everest')->getSetting('layouts');
+            $layouts = App\Facades\Plugin::getPlugin('Astronomy')->getSetting('layouts');
             // dd($layouts)
         @endphp
 
@@ -48,4 +48,4 @@
         @endif
 
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

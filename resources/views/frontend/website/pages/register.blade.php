@@ -1,7 +1,7 @@
-<x-everest::layouts.main>
+<x-astronomy::layouts.main>
     <div class="max-w-4xl mx-auto px-4 py-8">
         <div class="mb-6">
-            <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-600" />
+            <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-600" />
         </div>
 
         <div class="bg-white rounded-lg shadow-sm p-6">
@@ -181,9 +181,9 @@
                                 <span class="loading loading-spinner loading-xs" wire:loading></span>
                                 {{ __('general.register') }}
                             </button>
-                            <x-everest::link class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" :href="$loginUrl">
+                            <x-astronomy::link class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" :href="$loginUrl">
                                 {{ __('general.login') }}
-                            </x-everest::link>
+                            </x-astronomy::link>
                         </div>
                     </form>
                 @else
@@ -194,18 +194,18 @@
                     <p class="text-gray-700">{{ __('general.registration_complete_message') }}</p>
                     <ul class="space-y-2 list-disc list-inside text-gray-700">
                         <li>
-                            <x-everest::link class="text-primary-600 hover:text-blue-600" href="{{ route('filament.scheduledConference.pages.profile') }}">
+                            <x-astronomy::link class="text-primary-600 hover:text-blue-600" href="{{ route('filament.scheduledConference.pages.profile') }}">
                                 {{ __('general.edit_my_profile') }}
-                            </x-everest::link>
+                            </x-astronomy::link>
                         </li>
                         <li>
-                            <x-everest::link class="text-primary-600 hover:text-blue-600" href="{{ $homeUrl }}">
+                            <x-astronomy::link class="text-primary-600 hover:text-blue-600" href="{{ $homeUrl }}">
                                 {{ __('general.continue_browsing') }}
-                            </x-everest::link>
+                            </x-astronomy::link>
                         </li>
                     </ul>
                 </div>
             @endif
         </div>
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

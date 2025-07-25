@@ -1,7 +1,7 @@
-<x-everest::layouts.main>
+<x-astronomy::layouts.main>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-6">
-            <x-everest::breadcrumbs 
+            <x-astronomy::breadcrumbs 
                 :breadcrumbs="$this->getBreadcrumbs()" 
                 class="text-sm text-gray-600 transition-colors duration-300" 
             />
@@ -25,4 +25,4 @@
             @endforelse
         </div>
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

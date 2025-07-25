@@ -1,9 +1,9 @@
 @use('Illuminate\Support\Str')
 @use('Carbon\Carbon')
-<x-everest::layouts.main>
+<x-astronomy::layouts.main>
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="space-y-6">
-        <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+        <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
     </div>
     @if ($registrationOpen)
         <div class="bg-white shadow-md rounded-lg overflow-hidden mt-6">
@@ -209,4 +209,4 @@
         </div>
     @endif
     
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

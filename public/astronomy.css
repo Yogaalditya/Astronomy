@@ -84,13 +84,13 @@ body {
     font-size: 25px;
 }
 
-.navbar-custom-everest a {
+.navbar-custom-astronomy a {
     position: relative;
     overflow: hidden;
     transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-.navbar-custom-everest a::before {
+.navbar-custom-astronomy a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -103,12 +103,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.navbar-custom-everest a:hover::before {
+.navbar-custom-astronomy a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.navbar-custom-everest a:hover {
+.navbar-custom-astronomy a:hover {
     transform: translateY(-2px);
 }
 
@@ -195,19 +195,19 @@ body {
     }
 }
 
-.navbar-custom-everest a {
+.navbar-custom-astronomy a {
     animation: menuFadeIn 0.5s ease-in-out;
 }
 
-.navbar-custom-everest a:nth-child(1) {
+.navbar-custom-astronomy a:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.navbar-custom-everest a:nth-child(2) {
+.navbar-custom-astronomy a:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.navbar-custom-everest a:nth-child(3) {
+.navbar-custom-astronomy a:nth-child(3) {
     animation-delay: 0.3s;
 }
 
@@ -248,7 +248,7 @@ body {
     background-color: #F5F5F5;
 }
 
-.home-everest.section-1 {
+.home-astronomy.section-1 {
     max-width: 100%;
     margin: auto;
     padding-top: 6rem !important;
@@ -286,13 +286,13 @@ body {
     margin: 0 auto;
 }
 
-.home-everest ul {
+.home-astronomy ul {
     list-style-type: none;
     padding-left: 0;
     margin: 2rem 0;
 }
 
-.home-everest li {
+.home-astronomy li {
     margin-bottom: 1rem;
     padding-left: 30px;
     position: relative;
@@ -301,11 +301,11 @@ body {
     color: #475569;
 }
 
-.home-everest li:hover {
+.home-astronomy li:hover {
     transform: translateX(5px);
 }
 
-.home-everest li::before {
+.home-astronomy li::before {
     content: '→';
     position: absolute;
     left: 0;
@@ -394,7 +394,7 @@ body {
         font-size: 1rem;
     }
 
-    .home-everest.section-1 {
+    .home-astronomy.section-1 {
         padding: 0 1.5rem;
     }
 
@@ -412,7 +412,7 @@ body {
         font-size: 1.15rem;
     }
 
-    .home-everest.section-1 {
+    .home-astronomy.section-1 {
         padding: 0 4rem;
     }
 }
@@ -430,7 +430,7 @@ body {
         font-size: 1rem;
     }
 
-    .home-everest.section-1 {
+    .home-astronomy.section-1 {
         padding: 0 1rem;
     }
 
@@ -1205,7 +1205,7 @@ body {
 }
 
 /* Container styles */
-.register-status-everest {
+.register-status-astronomy {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
@@ -1216,7 +1216,7 @@ body {
 }
 
 /* Main title */
-.register-status-everest>p {
+.register-status-astronomy>p {
     font-size: 1.8rem;
     color: #2c3e50;
     text-align: center;
@@ -1226,13 +1226,13 @@ body {
 }
 
 /* Ordered list styles */
-.register-status-everest ol {
+.register-status-astronomy ol {
     counter-reset: section;
     list-style-type: none;
     padding-left: 0;
 }
 
-.register-status-everest ol>li {
+.register-status-astronomy ol>li {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
     background: white;
@@ -1241,12 +1241,12 @@ body {
     transition: transform 0.2s ease;
 }
 
-.register-status-everest ol>li:hover {
+.register-status-astronomy ol>li:hover {
     transform: translateX(5px);
 }
 
 /* Section titles */
-.register-status-everest ol>li>p {
+.register-status-astronomy ol>li>p {
     color: #2c3e50;
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -1255,18 +1255,18 @@ body {
 }
 
 /* Unordered list styles */
-.register-status-everest ul {
+.register-status-astronomy ul {
     list-style-type: none;
     padding-left: 1.5rem;
 }
 
-.register-status-everest ul li {
+.register-status-astronomy ul li {
     position: relative;
     margin-bottom: 0.5rem;
     padding-left: 1.2rem;
 }
 
-.register-status-everest ul li::before {
+.register-status-astronomy ul li::before {
     content: "•";
     color: oklch(var(--p));
     position: absolute;
@@ -1275,37 +1275,37 @@ body {
 }
 
 /* Links */
-.register-status-everest a {
+.register-status-astronomy a {
     color: oklch(var(--p));
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.register-status-everest a:hover {
+.register-status-astronomy a:hover {
     color: #2980b9;
     text-decoration: underline;
 }
 
 /* Strong text */
-.register-status-everest strong {
+.register-status-astronomy strong {
     color: #2c3e50;
     font-weight: 600;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .register-status-everest {
+    .register-status-astronomy {
         padding: 1rem;
     }
 
-    .register-status-everest ol>li {
+    .register-status-astronomy ol>li {
         padding: 1rem;
     }
 }
 
 /* End Template */
 
-.navbar-everest {
+.navbar-astronomy {
     max-width: 94rem
         /* 1280px */
     ;

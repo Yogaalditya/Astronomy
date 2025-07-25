@@ -1,7 +1,7 @@
 <?php
 
-use Everest\EverestTheme;
+use Astronomy\AstronomyTheme;
 
 require 'vendor/autoload.php';
 
-return new EverestTheme;
+return new AstronomyTheme;

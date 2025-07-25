@@ -1,7 +1,7 @@
-<x-everest::layouts.main>
+<x-astronomy::layouts.main>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="mb-6">
-            <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+            <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
         <div class="flex mb-5 space-x-4">
             <h1 class="text-xl font-semibold min-w-fit">List Committee</h1>
@@ -43,4 +43,4 @@
             @endforelse
         </div>
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

@@ -1,7 +1,7 @@
-<x-everest::layouts.main class="min-h-screen bg-gray-50 py-12 px-4">
+<x-astronomy::layouts.main class="min-h-screen bg-gray-50 py-12 px-4">
     <div class="max-w-xl mx-auto">
         <div class="mb-6">
-            <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-500 hover:text-gray-700 transition-colors" />
+            <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-500 hover:text-gray-700 transition-colors" />
         </div>
 
         <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
@@ -48,4 +48,4 @@
             </div>
         </div>
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

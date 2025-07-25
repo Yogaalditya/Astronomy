@@ -1,8 +1,8 @@
 {
-    "name": "leconfe/everest",
+    "name": "leconfe/astronomy",
     "autoload": {
         "psr-4": {
-            "Everest\\": "src/"
+            "Astronomy\\": "src/"
         }
     },
     "authors": [

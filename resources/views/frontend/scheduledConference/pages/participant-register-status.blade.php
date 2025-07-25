@@ -1,11 +1,11 @@
 @use('App\Models\Enums\RegistrationPaymentState')
 
-<x-everest::layouts.main>
+<x-astronomy::layouts.main>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         @if ($isLogged)
             <!-- Breadcrumbs -->
             <div class="mb-8">
-                <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+                <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
             </div>
 
             @if ($userRegistration)
@@ -230,4 +230,4 @@
             {{ abort(404) }}
         @endif
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

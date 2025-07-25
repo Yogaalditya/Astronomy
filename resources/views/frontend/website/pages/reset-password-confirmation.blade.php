@@ -1,7 +1,7 @@
-<x-everest::layouts.main class="min-h-screen bg-gray-50/50 py-16 px-4">
+<x-astronomy::layouts.main class="min-h-screen bg-gray-50/50 py-16 px-4">
  <div class="max-w-lg mx-auto">
     <div class="mb-8">
-        <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm" />
+        <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm" />
     </div>
 
     <div class="bg-white rounded-lg shadow-sm p-8">
@@ -79,14 +79,14 @@
                 <p class="text-gray-600">
                     {{ __('general.reset_password_update_success') }}
                 </p>
-                <x-everest::link 
+                <x-astronomy::link 
                     class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
                     :href="app()->getLoginUrl()"
                 >
                     {{ __('general.login') }}
-                </x-everest::link>
+                </x-astronomy::link>
             </div>
         @endif
     </div>
 </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

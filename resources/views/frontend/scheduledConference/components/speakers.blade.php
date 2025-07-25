@@ -11,7 +11,7 @@
 							@foreach ($role->speakers as $speaker)
 								<div class="flex flex-col items-center text-center max-w-xs">
 									<!-- Foto bulat tanpa card -->
-									<div class="mb-6">
+									<div class="mb-0">
 										@if($speaker->getFilamentAvatarUrl())
 											<img
 												class="h-56 w-56 object-cover rounded-full border-4 border-gray-200 shadow-lg"
@@ -34,13 +34,13 @@
 									</div>
 									
 									<!-- Card untuk nama dan info -->
-									<div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 w-full">
+									<div class="bg-white rounded-lg shadow-lg border border-gray-200 w-full -mt-10 relative z-10"> 
 										<h4 class="text-2xl font-bold text-gray-900 mb-3">
 											{{ $speaker->fullName }}
 										</h4>
 
 										@if ($speaker->getMeta('affiliation'))
-											<p class="text-lg text-gray-600 mb-4">
+											<p class="text-lg text-yellow-400 mb-4">
 												{{ $speaker->getMeta('affiliation') }}
 											</p>
 										@endif

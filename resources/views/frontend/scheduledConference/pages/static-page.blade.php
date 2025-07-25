@@ -1,7 +1,7 @@
-<x-everest::layouts.main>
+<x-astronomy::layouts.main>
     <div class="mx-auto ">
         <div class="mb-6">
-            <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+            <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
         <div class="relative">
             <div class="flex mb-5 space-x-4">
@@ -19,4 +19,4 @@
             @endif
         </div>
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

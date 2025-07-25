@@ -1,4 +1,4 @@
-<div class="register-status-everest">
+<div class="register-status-astronomy">
     <p><strong>Conference Registration Policy</strong></p>
     <ol>
         <li>

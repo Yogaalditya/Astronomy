@@ -1,7 +1,7 @@
-<x-everest::layouts.main class="min-h-screen bg-gray-50">
+<x-astronomy::layouts.main class="min-h-screen bg-gray-50">
     <div class="max-w-md mx-auto px-4 py-8">
         <div class="mb-6">
-            <x-everest::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-600" />
+            <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-600" />
         </div>
         
         <div class="bg-white rounded-lg shadow-sm p-6">
@@ -58,9 +58,9 @@
                         />
                         <span class="ml-2 text-sm text-gray-700">{{ __('general.remember_me') }}</span>
                     </label>
-                    <x-everest::link :href="$resetPasswordUrl" class="text-sm text-primary-600 hover:text-blue-600">
+                    <x-astronomy::link :href="$resetPasswordUrl" class="text-sm text-primary-600 hover:text-blue-600">
                         {{ __('general.forgot_password_question') }}
-                    </x-everest::link>
+                    </x-astronomy::link>
                 </div>
 
                 <div class="flex gap-3 pt-4">
@@ -73,15 +73,15 @@
                         {{ __('general.login') }}
                     </button>
                     @if($registerUrl)
-                        <x-everest::link 
+                        <x-astronomy::link 
                             class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" 
                             :href="$registerUrl"
                         >
                             {{ __('general.register') }}
-                        </x-everest::link>
+                        </x-astronomy::link>
                     @endif
                 </div>
             </form>
         </div>
     </div>
-</x-everest::layouts.main>
+</x-astronomy::layouts.main>

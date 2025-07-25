@@ -1,12 +1,12 @@
 @props([
     'title' => null,
 ])
-<x-everest::layouts.base :title="$title">
+<x-astronomy::layouts.base :title="$title">
     <div class="flex h-full min-h-screen flex-col">
         @hook('Frontend::Views::Header')
 
         {{-- Load Header Layout --}}
-        <x-everest::layouts.header />
+        <x-astronomy::layouts.header />
 
 
         <main class="py-3 ">
@@ -15,9 +15,9 @@
         </main>
 
         {{-- Load Footer Layout --}}
-        <x-everest::layouts.footer />
+        <x-astronomy::layouts.footer />
 
         @hook('Frontend::Views::Footer')
     </div>
-</x-everest::layouts.base>
+</x-astronomy::layouts.base>
 
