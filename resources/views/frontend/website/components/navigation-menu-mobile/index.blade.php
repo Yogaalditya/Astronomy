@@ -90,8 +90,8 @@
                                                     <li class="navigation-menu-item relative">
                                                         <x-website::link @class([
                                                             'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
-                                                            'text-primary font-semibold' => request()->url() === $item->getUrl(),
-                                                            'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
+                                                            'text-primary font-bold' => request()->url() === $item->getUrl(),
+                                                            'text-slate-900 font-bold' => request()->url() !== $item->getUrl(),
                                                         ]) :href="$item->getUrl()">
                                                             {{ $item->getLabel() }}
                                                         </x-website::link>
@@ -101,7 +101,7 @@
                                                         <button 
                                                             x-ref="button"
                                                             @@click="open = !open"
-                                                            class="hover:bg-base-content/10 py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex items-center justify-between text-slate-900 font-medium"
+                                                            class="hover:bg-base-content/10 py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex items-center justify-between text-slate-900 font-bold"
                                                         >
                                                             <span>{{ $item->getLabel() }}</span>
                                                             <svg :class="{ '-rotate-180': open }"
@@ -116,8 +116,8 @@
                                                                 <li class="navigation-menu-item relative">
                                                                     <x-website::link @class([
                                                                         'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
-                                                                        'text-primary font-semibold' => request()->url() === $item->getUrl(),
-                                                                        'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
+                                                                        'text-primary font-bold' => request()->url() === $item->getUrl(),
+                                                                        'text-slate-900 font-bold' => request()->url() !== $item->getUrl(),
                                                                     ]) :href="$item->getUrl()">
                                                                         {{ $childItem->getLabel() }}
                                                                     </x-website::link>

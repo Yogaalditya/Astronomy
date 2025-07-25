@@ -17,7 +17,7 @@
                     </div>
                 @endif
 
-                <div class="prose  max-w-none">
+                <div class="prose  max-w-none text-black">
                     {{ new Illuminate\Support\HtmlString($this->announcement->getMeta('content')) }}
                 </div>
             </div>
