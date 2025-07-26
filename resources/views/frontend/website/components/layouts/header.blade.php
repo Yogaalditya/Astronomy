@@ -42,7 +42,10 @@
 @endif
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
-    <div id="navbar" class="sticky-navbar top-0 shadow z-50 w-full text-white transition-all duration-300">
+    <div id="navbar" class="sticky-navbar navbar-locked top-0 shadow z-50 w-full text-white transition-all duration-300">
+
+    
+
         <!-- Top Row: Logo & User -->
         <div class="navbar-astronomy navbar-custom-astronomy container mx-auto px-4 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -97,5 +100,6 @@
 
         window.addEventListener('scroll', handleScroll);
     });
+    
     </script>
 @endif

@@ -85,7 +85,7 @@
                 const nextBtn = document.getElementById('nextPartner');
 
                 const totalSlides = {{ $totalSlides }};
-                let currentSlide = 0;
+                let currentSlide = 0 ;
                 let autoSlideInterval;
 
                 function updateSlider() {
@@ -157,5 +157,6 @@
             });
         </script>
         @endif
+
 </section>
 @endif

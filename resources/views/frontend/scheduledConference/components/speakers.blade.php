@@ -11,21 +11,21 @@
 							@foreach ($role->speakers as $speaker)
 								<div class="flex flex-col items-center text-center max-w-xs">
 									<!-- Foto bulat tanpa card -->
-									<div class="mb-0">
+									<div class="mb-0 group">
 										@if($speaker->getFilamentAvatarUrl())
 											<img
-												class="h-56 w-56 object-cover rounded-full border-4 border-gray-200 shadow-lg"
+												class="h-56 w-56 object-cover rounded-full border-4 border-gray-200 shadow-lg transform transition-transform duration-500 hover:scale-110 hover:brightness-110 hover:shadow-xl"
 												src="{{ $speaker->getFilamentAvatarUrl() }}"
 												alt="{{ $speaker->fullName }}"
 												onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
 											/>
-											<div class="h-56 w-56 rounded-full border-4 border-gray-200 shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 items-center justify-center hidden">
+											<div class="h-56 w-56 rounded-full border-4 border-gray-200 shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 items-center justify-center hidden transform transition-transform duration-500 hover:scale-110 hover:brightness-110 hover:shadow-xl">
 												<span class="text-white text-4xl font-bold">
 													{{ strtoupper(substr($speaker->fullName, 0, 2)) }}
 												</span>
 											</div>
 										@else
-											<div class="h-56 w-56 rounded-full border-4 border-gray-200 shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+											<div class="h-56 w-56 rounded-full border-4 border-gray-200 shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center transform transition-transform duration-500 hover:scale-110 hover:brightness-110 hover:shadow-xl">
 												<span class="text-white text-4xl font-bold">
 													{{ strtoupper(substr($speaker->fullName, 0, 2)) }}
 												</span>

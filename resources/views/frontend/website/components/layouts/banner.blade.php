@@ -50,7 +50,7 @@
                             <div class="text-center">
                                 @if($currentScheduledConference->date_start)
                                     @if($currentScheduledConference->date_end && $currentScheduledConference->date_start->format(Setting::get('format_date')) !== $currentScheduledConference->date_end->format(Setting::get('format_date')))
-                                        <span class="font-semibold text-white text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span cla ss="font-semibold text-white text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                         <span class="font-semibold text-white text-lg"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
                                     @else
                                         <span class="font-semibold text-white text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>

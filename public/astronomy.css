@@ -10,6 +10,31 @@ body {
     background-color: #FAFAFA;
 }
 
+.navbar-locked {
+    background-image: linear-gradient(
+    135deg,
+    #0a1b2b 0%,
+    #122b45 30%,     
+    #0B1A33 60%,        
+    #2393A933 90%
+    ) !important;
+    backdrop-filter: blur(6px);
+    color: #ffffff !important;
+    position: sticky;
+}
+
+
+
+
+
+
+/* .sticky-navbar {
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ease;
+    background-color: oklch(var(--p));
+} */
+
 .icon-banner {
     color: oklch(var(--p));
 }
@@ -175,12 +200,7 @@ body {
 }
 
 /* Sticky Navbar Styles */
-.sticky-navbar {
-    position: sticky;
-    top: 0;
-    transition: background-color 0.3s ease;
-    background-color: oklch(var(--p));
-}
+
 
 /* Add subtle animation for menu items */
 @keyframes menuFadeIn {
