@@ -28,67 +28,38 @@
 					@php
 						$content = $announcement->getMeta('content');
 						preg_match('/<img[^>]+src="([^">]+)"/', $content, $matches);
-						$imageUrl = $matches[1] ?? '';
+						$imageUrl = $matches[1] ?? 'https://picsum.photos/400/200';
 					@endphp
 
-					<article
-						class="group relative bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 ease-in-out transform hover:-translate-y-1">
-						<!-- Image Section -->
-						<div class="relative h-64 rounded-t-3xl overflow-hidden">
-							<div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 z-10">
-							</div>
-
-
-							@if($imageUrl)
-								<img src="{{ $imageUrl }}" alt="{{ $announcement->title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
-							@else
-								<div class="w-full h-full flex items-center justify-center bg-gray-200">
-									<span class="text-gray-500 text-xl">No Image Available</span>
-								</div>
-							@endif
-							<!-- Date Badge -->
-							<div class="absolute top-4 left-4 z-20">
-								<div
-									class="flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-									<svg class="color-latest w-4 h-4" fill="none" stroke="currentColor"
-										viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											stroke-width="2"
-											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-									</svg>
-									<span class="text-sm font-medium text-gray-800">
-										{{ $announcement->created_at->format(Setting::get('format_date')) }}
-									</span>
-								</div>
-							</div>
+					<article class="news-card">
+						<!-- Date Badge -->
+						<div class="date-badge">
+							<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+							</svg>
+							{{ $announcement->created_at->format(Setting::get('format_date')) }}
 						</div>
-
-						<!-- Content Section -->
-						<div class="relative p-8 bg-white/80 backdrop-blur-sm rounded-b-3xl">
-							<h3
-								class="text-xl font-bold text-gray-900 mb-4 line-clamp-2 transition-colors duration-300">
-								<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}"
-									class="block hover:text-blue-600">
-									{{ $announcement->title }}
-								</a>
-							</h3>
-							<p class="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
-								{{ $announcement->getMeta('summary') }}
-							</p>
-							<div class="flex items-center justify-between">
-								<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}"
-									class="inline-flex items-center group/link">
-									<span
-										class="text-sm font-semibold color-latest group-hover/link:color-latest transition-colors duration-200">
-										Read full announcement
-									</span>
-									<svg class="w-5 h-5 ml-2 color-latest transform transition-transform duration-300 group-hover/link:translate-x-1"
-										fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-									</svg>
-								</a>
-							</div>
+						
+						<!-- Background Image Circle -->
+						<div class="card-image" style="background-image: url('{{ $imageUrl }}');"></div>
+						
+						<!-- Title -->
+						<h3 class="card-title">
+							{{ $announcement->title }}
+						</h3>
+						
+						<!-- Summary -->
+						<p class="card-summary">
+							{{ Str::limit($announcement->getMeta('summary'), 100) }}
+						</p>
+						
+						<!-- CTA Container -->
+						<div class="card-cta">
+							<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" 
+							   class="cta-link">
+								Read More
+							</a>
 						</div>
 					</article>
 				@endforeach

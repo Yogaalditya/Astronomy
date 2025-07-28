@@ -14,7 +14,7 @@
 									<div class="mb-0 group">
 										@if($speaker->getFilamentAvatarUrl())
 											<img
-												class="h-56 w-56 object-cover rounded-full border-4 border-gray-200 shadow-lg transform transition-transform duration-500 hover:scale-110 hover:brightness-110 hover:shadow-xl"
+												class="h-56 w-56 object-cover rounded-full border-4 border-gray-200 shadow-lg transform transition-transform duration-500 hover:scale-110"
 												src="{{ $speaker->getFilamentAvatarUrl() }}"
 												alt="{{ $speaker->fullName }}"
 												onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
