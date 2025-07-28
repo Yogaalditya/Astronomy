@@ -21,6 +21,7 @@
             @else
                 <li x-data="{ open: false }" 
                     x-on:mouseover="open = true" x-on:mouseleave="open = false"
+                    class="relative"
                     >
                     <button 
                         x-ref="button"
@@ -35,9 +36,10 @@
                         x-transition
                         x-anchor.bottom-end="$refs.button"
                         x-cloak
-                        class="navbar-dropdown-content text-gray-800"
+                        class="navbar-dropdown-content text-gray-800 fixed"
+                        style="z-index: 999999;"
                         >
-                        <div class="flex flex-col divide-y mt-1 min-w-[12rem] bg-white rounded-md shadow-md">
+                        <div class="flex flex-col divide-y mt-1 min-w-[12rem] bg-white rounded-md shadow-lg border border-gray-200">
                             @foreach ($item->children as $key => $childItem)
                                 <x-astronomy::link
                                     class="first:rounded-t-md last:rounded-b-md relative flex hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full"

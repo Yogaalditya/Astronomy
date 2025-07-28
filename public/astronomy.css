@@ -24,17 +24,6 @@ body {
 }
 
 
-
-
-
-
-/* .sticky-navbar {
-    position: sticky;
-    top: 0;
-    transition: background-color 0.3s ease;
-    background-color: oklch(var(--p));
-} */
-
 .icon-banner {
     color: oklch(var(--p));
 }
@@ -199,8 +188,173 @@ body {
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
-/* Sticky Navbar Styles */
+/* Bagian isi navbar */
+.navbar-top-section,
+.navbar-menu-section,
+.navbar-separator {
+    transition: all 0.4s ease-in-out;
+}
 
+/* ======= MINIMIZED STATE (Saat Scroll) ======= */
+.navbar-minimized {
+    height: 3rem; /* tinggi minimal navbar saat "tertutup" */
+    transition: height 0.4s ease-in-out;
+    overflow: visible; /* Biarkan dropdown menu terlihat */
+}
+
+.navbar-minimized .navbar-top-section {
+    height: 3rem !important; /* Sesuaikan dengan tinggi navbar minimized */
+    transition: height 0.4s ease-in-out;
+}
+
+.navbar-minimized .navbar-menu-section {
+    height: 0 !important; /* Sembunyikan menu section */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    overflow: visible; /* Biarkan dropdown menu terlihat */
+}
+
+.navbar-minimized .navbar-separator {
+    opacity: 0;
+    height: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar-minimized .navbar-logo {
+    height: 1.5rem !important; /* Logo lebih kecil */
+    transition: height 0.4s ease-in-out;
+}
+
+/* ======= HOVER: BUKA NAVBAR (dengan delay dari JavaScript) ======= */
+#navbar.navbar-minimized.navbar-hover-active {
+    height: auto; /* Biarkan tinggi menyesuaikan konten */
+    min-height: 100px; /* Tinggi minimum saat hover */
+    transition: all 0.4s ease-in-out;
+}
+
+#navbar.navbar-minimized.navbar-hover-active .navbar-top-section {
+    height: 4rem !important; /* Kembali ke tinggi normal */
+    transition: height 0.4s ease-in-out;
+}
+
+#navbar.navbar-minimized.navbar-hover-active .navbar-menu-section {
+    height: auto !important; /* Tampilkan menu section */
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+#navbar.navbar-minimized.navbar-hover-active .navbar-separator {
+    opacity: 0.8;
+    height: auto;
+    transition: all 0.4s ease-in-out;
+}
+
+#navbar.navbar-minimized.navbar-hover-active .navbar-logo {
+    height: 2rem !important; /* Logo kembali ke ukuran normal */
+    transition: height 0.4s ease-in-out;
+}
+
+/* Tambahan untuk memastikan smooth transition */
+.navbar-top-section {
+    overflow: hidden;
+}
+
+.navbar-menu-section {
+    overflow: hidden;
+}
+
+/* Pastikan logo memiliki transisi yang smooth */
+.navbar-logo {
+    transition: height 0.4s ease-in-out;
+}
+
+
+
+/* Subtle pulse animation untuk menarik perhatian */
+@keyframes pulse-subtle {
+    0%, 100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+/* Dropdown menu z-index fix */
+.navbar-dropdown-content {
+    z-index: 9999 !important;
+    position: relative !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .navbar-minimized {
+        height: 3.5rem;
+    }
+    
+    .navbar-minimized .navbar-top-section {
+        height: 3.5rem !important;
+    }
+    
+    .navbar-minimized .navbar-logo {
+        height: 1.75rem !important;
+    }
+    
+    /* Sembunyikan arrow indicator di mobile */
+    .navbar-arrow-indicator {
+        display: none !important;
+    }
+    
+    #navbar.navbar-minimized.navbar-hover-active {
+        min-height: 120px;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #navbar.navbar-minimized.navbar-hover-active .navbar-top-section {
+        height: 4.5rem !important;
+        transition: height 0.3s ease-in-out;
+    }
+    
+    #navbar.navbar-minimized.navbar-hover-active .navbar-menu-section {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #navbar.navbar-minimized.navbar-hover-active .navbar-separator {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #navbar.navbar-minimized.navbar-hover-active .navbar-logo {
+        height: 2.25rem !important;
+        transition: height 0.3s ease-in-out;
+    }
+}
+
+/* ======= DROPDOWN MENU FIXES ======= */
+.navbar-dropdown-content {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+/* Pastikan dropdown menu selalu terlihat bahkan saat navbar minimized */
+.navbar-minimized .navbar-dropdown-content {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+/* Pastikan parent container tidak memotong dropdown */
+.navbar-items {
+    overflow: visible !important;
+}
+
+.navbar-minimized .navbar-items {
+    overflow: visible !important;
+}
 
 /* Add subtle animation for menu items */
 @keyframes menuFadeIn {
