@@ -34,13 +34,13 @@
 									</div>
 									
 									<!-- Card untuk nama dan info -->
-									<div class="bg-white rounded-lg shadow-lg border border-gray-200 w-full -mt-10 relative z-10"> 
+									<div class="bg-white rounded-3xl shadow-lg border border-gray-200 w-full -mt-10 relative z-10"> 
 										<h4 class="text-2xl font-bold text-gray-900 mb-3">
 											{{ $speaker->fullName }}
 										</h4>
 
 										@if ($speaker->getMeta('affiliation'))
-											<p class="text-lg text-yellow-400 mb-4">
+											<p class="text-lg text-[#022f73] font-medium mb-4">
 												{{ $speaker->getMeta('affiliation') }}
 											</p>
 										@endif

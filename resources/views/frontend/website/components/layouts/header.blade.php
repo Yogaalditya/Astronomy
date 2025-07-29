@@ -83,119 +83,26 @@
             </div>
         </div>
         
-        <!-- Arrow indicator di tengah bawah navbar (hanya untuk desktop) -->
-        <!-- <div class="navbar-arrow-indicator hidden lg:flex justify-center items-center w-full pb-2 transition-all duration-300">
-            <div class="navbar-arrow-container bg-white bg-opacity-20 backdrop-blur-sm rounded-full p-2 shadow-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300">
-                <svg class="navbar-arrow-down w-4 h-4 transition-transform duration-300 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-                <svg class="navbar-arrow-up w-4 h-4 transition-transform duration-300 text-white hidden" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
-                </svg>
-            </div>
-        </div> -->
+
     </div>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const navbar = document.getElementById('navbar');
         const scrollThreshold = 100;
-        let hoverTimeout;
-        let isHovered = false;
-        
-        // Arrow elements
-        const arrowIndicator = navbar.querySelector('.navbar-arrow-indicator');
-        const arrowDown = navbar.querySelector('.navbar-arrow-down');
-        const arrowUp = navbar.querySelector('.navbar-arrow-up');
-
-        function updateArrowVisibility() {
-            const isMobile = window.innerWidth <= 1024;
-            const isMinimized = navbar.classList.contains('navbar-minimized');
-            
-            if (arrowIndicator) {
-                if (isMobile || !isMinimized) {
-                    arrowIndicator.style.display = 'none';
-                } else {
-                    arrowIndicator.style.display = 'flex';
-                }
-            }
-        }
-
-        function showArrowDown() {
-            if (arrowDown && arrowUp) {
-                arrowDown.classList.remove('hidden');
-                arrowUp.classList.add('hidden');
-            }
-        }
-
-        function showArrowUp() {
-            if (arrowDown && arrowUp) {
-                arrowDown.classList.add('hidden');
-                arrowUp.classList.remove('hidden');
-            }
-        }
 
         function handleScroll() {
             if (window.scrollY > scrollThreshold) {
                 navbar.classList.add('navbar-minimized');
-                showArrowDown();
             } else {
                 navbar.classList.remove('navbar-minimized');
-                // Reset hover state when not minimized
-                navbar.classList.remove('navbar-hover-active');
-                clearTimeout(hoverTimeout);
-                isHovered = false;
-                showArrowDown();
             }
-            updateArrowVisibility();
         }
-
-        // Handle mouse enter with delay (hanya untuk desktop)
-        navbar.addEventListener('mouseenter', function() {
-            // Hanya aktif jika bukan mobile (sidebar menu tidak terlihat)
-            const isMobile = window.innerWidth <= 1024;
-            if (navbar.classList.contains('navbar-minimized') && !isHovered && !isMobile) {
-                isHovered = true;
-                hoverTimeout = setTimeout(function() {
-                    navbar.classList.add('navbar-hover-active');
-                    showArrowUp();
-                }, 200);
-            }
-        });
-
-        // Handle mouse leave
-        navbar.addEventListener('mouseleave', function() {
-            isHovered = false;
-            clearTimeout(hoverTimeout);
-            navbar.classList.remove('navbar-hover-active');
-            if (navbar.classList.contains('navbar-minimized')) {
-                showArrowDown();
-            }
-        });
-
-        // Handle arrow click untuk feedback visual
-        if (arrowIndicator) {
-            arrowIndicator.addEventListener('click', function() {
-                const arrowContainer = arrowIndicator.querySelector('.navbar-arrow-container');
-                if (arrowContainer) {
-                    arrowContainer.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        arrowContainer.style.transform = '';
-                    }, 150);
-                }
-            });
-        }
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            updateArrowVisibility();
-        });
 
         window.addEventListener('scroll', handleScroll);
         
         // Initial check
         handleScroll();
-        updateArrowVisibility();
     });
     </script>
 @endif
