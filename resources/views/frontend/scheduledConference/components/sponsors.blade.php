@@ -95,6 +95,43 @@
                             </{{$tag}}>
                         </div>
                     @endforeach
+                    
+                    <!-- Duplicate first slide for infinite loop -->
+                    @if($allSponsors->count() > 0)
+                        @php 
+                            $firstSponsor = $allSponsors->first();
+                            $sponsor = $firstSponsor['sponsor'];
+                            $level = $firstSponsor['level'];
+                            $tag = $sponsor->getMeta('url') ? 'a' : 'div'; 
+                        @endphp
+
+                        <div class="flex-shrink-0 w-full flex flex-col items-center justify-center p-8">
+                            @if($level)
+                                <h3 class="text-xl font-semibold text-gray-700 mb-4">{{ $level }}</h3>
+                            @endif
+                            
+                            <{{$tag}}
+                                @if($sponsor->getMeta('url'))
+                                href="{{ $sponsor->getMeta('url') }}"
+                                target="_blank"
+                                @endif
+                                class="flex items-center justify-center transition duration-300 ease-in-out hover:scale-105">
+                                <!-- Sponsor Logo -->
+                                <img
+                                    style="
+                                        image-rendering: auto;
+                                        width: auto;
+                                        height: auto;
+                                        object-fit: contain;
+                                        max-width: 300px;
+                                        max-height: 150px;
+                                    "
+                                    src="{{ $sponsor->getFirstMediaUrl('logo') }}"
+                                    alt="{{ $sponsor->name }}"
+                                    loading="lazy" />
+                            </{{$tag}}>
+                        </div>
+                    @endif
                 </div>
             </div>
 
@@ -113,16 +150,24 @@
                 const prevBtn = document.getElementById('prevSponsor');
                 const nextBtn = document.getElementById('nextSponsor');
 
-                const totalSlides = {{ $totalSlides }};
+                const totalSlides = {{ $totalSlides ?? 0 }};
                 let currentSlide = 0;
                 let autoSlideInterval;
+                let isTransitioning = false;
 
-                function updateSlider() {
+                function updateSlider(withTransition = true) {
+                    if (withTransition) {
+                        slider.style.transition = 'transform 0.5s ease-in-out';
+                    } else {
+                        slider.style.transition = 'none';
+                    }
+                    
                     slider.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
 
                     // Update indicators
+                    const indicatorIndex = currentSlide >= totalSlides ? 0 : currentSlide;
                     indicators.forEach(function(indicator, index) {
-                        if (index === currentSlide) {
+                        if (index === indicatorIndex) {
                             indicator.classList.add('bg-blue-600');
                             indicator.classList.remove('bg-gray-300');
                         } else {
@@ -133,18 +178,61 @@
                 }
 
                 function nextSlide() {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateSlider();
+                    if (isTransitioning) return;
+                    
+                    isTransitioning = true;
+                    currentSlide++;
+                    updateSlider(true);
+
+                    // If we're at the duplicate slide (totalSlides), reset to first slide without animation
+                    if (currentSlide >= totalSlides) {
+                        setTimeout(function() {
+                            currentSlide = 0;
+                            updateSlider(false);
+                            isTransitioning = false;
+                        }, 500); // Wait for transition to complete
+                    } else {
+                        setTimeout(function() {
+                            isTransitioning = false;
+                        }, 500);
+                    }
                 }
 
                 function prevSlide() {
-                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    updateSlider();
+                    if (isTransitioning) return;
+                    
+                    isTransitioning = true;
+                    
+                    if (currentSlide === 0) {
+                        // Jump to duplicate slide without animation, then animate to last real slide
+                        currentSlide = totalSlides;
+                        updateSlider(false);
+                        
+                        setTimeout(function() {
+                            currentSlide = totalSlides - 1;
+                            updateSlider(true);
+                            setTimeout(function() {
+                                isTransitioning = false;
+                            }, 500);
+                        }, 50);
+                    } else {
+                        currentSlide--;
+                        updateSlider(true);
+                        setTimeout(function() {
+                            isTransitioning = false;
+                        }, 500);
+                    }
                 }
 
                 function goToSlide(index) {
+                    if (isTransitioning) return;
+                    
+                    isTransitioning = true;
                     currentSlide = index;
-                    updateSlider();
+                    updateSlider(true);
+                    setTimeout(function() {
+                        isTransitioning = false;
+                    }, 500);
                 }
 
                 function startAutoSlide() {

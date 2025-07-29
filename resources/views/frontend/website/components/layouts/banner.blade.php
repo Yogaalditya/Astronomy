@@ -36,21 +36,21 @@
     @endif
 >
     <div class="container mx-auto px-4 z-10">
-        <div class="text-center max-w-4xl mx-auto">
+        <div class="text-left max-w-4xl mx-auto">
             <div class="w-full">
                 <h1 class="font-bold text-3xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl text-white">{{ $currentScheduledConference->title }}</h1>
-                <div class="flex flex-col space-y-4 mb-8 justify-center items-center">
+                <div class="flex flex-col space-y-4 mb-8 justify-start items-start">
                     @if($currentScheduledConference->date_start || $currentScheduledConference->date_end)
-                        <div class="flex items-center justify-center">
+                        <div class="flex items-center justify-start">
                             <span class="icon-banner mr-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                             </span>
-                            <div class="text-center">
+                            <div class="text-left">
                                 @if($currentScheduledConference->date_start)
                                     @if($currentScheduledConference->date_end && $currentScheduledConference->date_start->format(Setting::get('format_date')) !== $currentScheduledConference->date_end->format(Setting::get('format_date')))
-                                        <span cla ss="font-semibold text-white text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold text-white text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                         <span class="font-semibold text-white text-lg"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
                                     @else
                                         <span class="font-semibold text-white text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
@@ -61,14 +61,14 @@
                         </div>
                     @endif
                     
-                    <div class="flex items-center justify-center">
+                    <div class="flex items-center justify-start">
                         <span class="icon-banner mr-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </span>
-                        <div class="text-center">
+                        <div class="text-left">
                             <span class="font-semibold text-white text-lg">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
                             <div class="text-sm text-gray-200 mt-1">Conference Venue</div>
                         </div>

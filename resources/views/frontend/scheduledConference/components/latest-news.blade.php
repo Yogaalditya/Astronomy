@@ -46,12 +46,12 @@
 						
 						<!-- Title -->
 						<h3 class="card-title">
-							{{ $announcement->title }}
+							{{ Str::limit($announcement->title, 70) }}
 						</h3>
 						
 						<!-- Summary -->
 						<p class="card-summary">
-							{{ Str::limit($announcement->getMeta('summary'), 100) }}
+							{{ Str::limit($announcement->getMeta('summary'), 200) }}
 						</p>
 						
 						<!-- CTA Container -->
