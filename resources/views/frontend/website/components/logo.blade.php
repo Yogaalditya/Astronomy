@@ -22,10 +22,11 @@
         :href="$homeUrl"
         {{ $attributes->merge([
             'class' => '
-                text-lg
-                sm:text-xl
+                text-xl
+                sm:text-2xl
+                lg:text-2xl
                 font-semibold
-                hover:opacity-80
+                hover:opacity-85
                 transition-opacity
                 duration-200
             '

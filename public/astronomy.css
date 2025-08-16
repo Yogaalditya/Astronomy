@@ -10,20 +10,6 @@ body {
     background-color: #FAFAFA;
 }
 
-.navbar-locked {
-    background-image: linear-gradient(
-    135deg,
-    #0a1b2b 0%,
-    #122b45 30%,     
-    #0B1A33 60%,        
-    #2393A933 90%
-    ) !important;
-    backdrop-filter: blur(6px);
-    color: #ffffff !important;
-    position: sticky;
-}
-
-
 .icon-banner {
     color: oklch(var(--p));
 }
@@ -89,6 +75,16 @@ body {
     font-family: "Inter Tight", sans-serif;
 }
 
+.navbar-container {
+    background-image: linear-gradient(
+        135deg,
+        #071a2f 0%,
+        #0b2540 100%
+    ) !important;
+    backdrop-filter: blur(6px);
+    position: sticky;
+}
+
 /* General Styles for Navbar */
 .navbar-starts a {
     color: #229799;
@@ -126,6 +122,87 @@ body {
     transform: translateY(-2px);
 }
 
+/* Dropdown menu z-index fix */
+.navbar-dropdown-content {
+    z-index: 9999 !important;
+    position: relative !important;
+}
+
+/* Navbar auto height and long-title handling */
+#navbar .navbar-top-section { 
+    height: auto;
+    min-height: 4rem; 
+    align-items: center; 
+}
+
+#navbar .navbar-logo { 
+    white-space: normal; 
+    line-height: 1.2; 
+    word-break: break-word; 
+}
+
+#navbar .navbar-logo div.relative {
+     height: 3rem; 
+}
+
+/* Hide text logo/title on very narrow screens, keep image size reasonable */
+@media (max-width: 480px) {
+    #navbar .navbar-logo { font-size: 0 !important; }
+    #navbar .navbar-logo div.relative { height: 2.25rem; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .navbar-minimized {
+        height: auto;
+        min-height: 3.5rem;
+    }
+    
+    .navbar-minimized .navbar-top-section {
+        height: auto !important;
+        min-height: 3.5rem !important;
+    }
+    
+    .navbar-minimized .navbar-logo {
+        height: 1.75rem !important;
+    }
+    
+
+}
+
+/* ======= DROPDOWN MENU FIXES ======= */
+.navbar-dropdown-content {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+/* Pastikan dropdown menu selalu terlihat bahkan saat navbar minimized */
+.navbar-minimized .navbar-dropdown-content {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+/* Pastikan parent container tidak memotong dropdown */
+.navbar-items {
+    overflow: visible !important;
+}
+
+.navbar-minimized .navbar-items {
+    overflow: visible !important;
+}
+
+/* Add subtle animation for menu items */
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 /* Adjusting logo and menu positioning */
@@ -186,138 +263,6 @@ body {
 
 .conference-partner:hover .conference-partner-logo {
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-}
-
-/* Bagian isi navbar */
-.navbar-top-section,
-.navbar-menu-section,
-.navbar-separator {
-    transition: all 0.4s ease-in-out;
-}
-
-/* ======= MINIMIZED STATE (Saat Scroll) ======= */
-.navbar-minimized {
-    height: 3rem; /* tinggi minimal navbar saat "tertutup" */
-    transition: height 0.4s ease-in-out;
-    overflow: visible; /* Biarkan dropdown menu terlihat */
-}
-
-.navbar-minimized .navbar-top-section {
-    height: 3rem !important; /* Sesuaikan dengan tinggi navbar minimized */
-    transition: height 0.4s ease-in-out;
-}
-
-.navbar-minimized .navbar-menu-section {
-    height: 0 !important; /* Sembunyikan menu section */
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
-    overflow: visible; /* Biarkan dropdown menu terlihat */
-}
-
-.navbar-minimized .navbar-separator {
-    opacity: 0;
-    height: 0;
-    transition: all 0.4s ease-in-out;
-}
-
-.navbar-minimized .navbar-logo {
-    height: 1.5rem !important; /* Logo lebih kecil */
-    transition: height 0.4s ease-in-out;
-}
-
-
-
-/* Tambahan untuk memastikan smooth transition */
-.navbar-top-section {
-    overflow: hidden;
-}
-
-.navbar-menu-section {
-    overflow: hidden;
-}
-
-/* Pastikan logo memiliki transisi yang smooth */
-.navbar-logo {
-    transition: height 0.4s ease-in-out;
-}
-
-
-
-
-
-/* Dropdown menu z-index fix */
-.navbar-dropdown-content {
-    z-index: 9999 !important;
-    position: relative !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .navbar-minimized {
-        height: 3.5rem;
-    }
-    
-    .navbar-minimized .navbar-top-section {
-        height: 3.5rem !important;
-    }
-    
-    .navbar-minimized .navbar-logo {
-        height: 1.75rem !important;
-    }
-    
-
-}
-
-/* ======= DROPDOWN MENU FIXES ======= */
-.navbar-dropdown-content {
-    z-index: 999999 !important;
-    position: fixed !important;
-}
-
-/* Pastikan dropdown menu selalu terlihat bahkan saat navbar minimized */
-.navbar-minimized .navbar-dropdown-content {
-    z-index: 999999 !important;
-    position: fixed !important;
-}
-
-/* Pastikan parent container tidak memotong dropdown */
-.navbar-items {
-    overflow: visible !important;
-}
-
-.navbar-minimized .navbar-items {
-    overflow: visible !important;
-}
-
-/* Add subtle animation for menu items */
-@keyframes menuFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.navbar-custom-astronomy a {
-    animation: menuFadeIn 0.5s ease-in-out;
-}
-
-.navbar-custom-astronomy a:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.navbar-custom-astronomy a:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.navbar-custom-astronomy a:nth-child(3) {
-    animation-delay: 0.3s;
 }
 
 /* Additional effects for conference logos */

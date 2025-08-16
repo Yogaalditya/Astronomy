@@ -27,9 +27,6 @@
         </div>
     </div>
 
-    <!-- Horizontal Separator -->
-    <div class="border-b-2 border-gray-800 opacity-70"></div>
-
     <!-- Bottom Row: Menu Items -->
     @if(App\Models\Conference::exists())
     <div class="container mx-auto px-4 lg:px-8 py-3">
@@ -42,11 +39,11 @@
 @endif
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
-    <div id="navbar" class="sticky-navbar navbar-locked top-0 shadow z-50 w-full text-white transition-all duration-500 ease-in-out">
+    <div id="navbar" class="sticky-navbar navbar-container top-0 shadow z-50 w-full text-white transition-all duration-500 ease-in-out">
 
         <!-- Top Row: Logo & User -->
-        <div class="navbar-astronomy navbar-custom-astronomy container mx-auto px-4 lg:px-8">
-            <div class="flex items-center justify-between navbar-top-section transition-all duration-500 ease-in-out h-16">
+        <div class="navbar-astronomy navbar-custom-astronomy-title container mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between navbar-top-section h-16 "> <!-- JUDULNYA -->
                 <!-- Mobile Menu & Logo -->
                 <div class="flex items-center gap-x-6">
                     <div class="lg:hidden">
@@ -54,7 +51,7 @@
                     </div>
                     <x-astronomy::logo
                         :headerLogo="$headerLogo"
-                        class="font-bold navbar-logo transition-all duration-500 ease-in-out h-8 w-auto"
+                        class="font-bold navbar-logo h-8 w-auto"
                     />
                 </div>
 
@@ -63,7 +60,7 @@
                 <div class="hidden lg:flex justify-end items-center space-x-6 z-10">
                     <x-astronomy::navigation-menu
                     :items="$userNavigationMenu"
-                    class="flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200"
+                    class="flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200 "
                     />
                 </div>
                 @endif
@@ -71,7 +68,7 @@
         </div>
 
         <!-- Horizontal Separator - Full Width -->
-        <div class="navbar-separator border-b-2 border-gray-800 opacity-80 w-full transition-all duration-500 ease-in-out"></div>
+        <div class="navbar-separator border-t-2 border-blue-100/60 opacity-80 w-full transition-all duration-500 ease-in-out"></div>
 
         <!-- Bottom Row: Menu Items -->
         <div class="navbar-astronomy navbar-custom-astronomy container mx-auto px-4 lg:px-8">
