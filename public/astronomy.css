@@ -28,7 +28,6 @@ body {
     justify-content: center;
     font-weight: 600;
     padding: 1rem 2rem;
-    border-radius: 9999px;
     text-align: center;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -1792,5 +1791,10 @@ body {
 
 .view-button:hover {
   background-color: #e0a700;
+}
+
+/* Countdown visibility fix: ensure numbers are readable on white cards */
+.countdown-con .text-gradient {
+  color: #0f172a !important; /* dark slate for contrast */
 }
 

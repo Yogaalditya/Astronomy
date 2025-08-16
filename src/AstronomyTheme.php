@@ -39,6 +39,9 @@ class AstronomyTheme extends Theme
 			Toggle::make('top_navigation')
 				->label('Enable Top Navigation')
 				->default(false),
+			Toggle::make('enable_countdown')
+				->label('Enable Countdown on Banner')
+				->default(false),
 			SpatieMediaLibraryFileUpload::make('images')
 				->collection('astronomy-header')
 				->label('Upload Header Images')
@@ -137,6 +140,7 @@ class AstronomyTheme extends Theme
 			'name_content' => $this->getSetting('name_content'),
 			'about' => $this->getSetting('about'),
 			'top_navigation' => $this->getSetting('top_navigation'),
+			'enable_countdown' => $this->getSetting('enable_countdown'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
 		];
 	}
