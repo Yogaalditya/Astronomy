@@ -84,13 +84,8 @@ body {
     position: sticky;
 }
 
-/* General Styles for Navbar */
-.navbar-starts a {
-    color: #229799;
-    margin-left: -20%;
-    margin-right: 10%;
-    font-family: fantasy;
-    font-size: 25px;
+.navbar-text-color {
+    color: #BFD3E6; 
 }
 
 .navbar-custom-astronomy a {
@@ -839,7 +834,7 @@ body {
     width: clamp(60px, 15vw, 80px);
     height: auto;
     margin-bottom: 1.5rem;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0, 0, 0, 0.1);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -1586,215 +1581,28 @@ body {
     }
 }
 
-/* bagian ini adalah code css untuk layout custom(jadi bisa diganti sewaktu waktu dan itu ga ngaruh ke themanya sama sekali */
-
-/* Custom Layout 1 */
-.launch-section {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: auto;
-  flex-wrap: wrap;
-  font-family: 'Segoe UI', sans-serif;
-  padding: 40px;
-  background-color: #fff;
-  color: #333;
-}
-
-.image-columns {
-  flex: 1;
-  display: flex;
-  gap: 20px;
-  max-width: 460px;
-}
-
-.image-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.image-column.right {
-  margin-top: 60px;
-}
-
-.image-column img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.text-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 320px;
-}
-
-.text-column h1 {
-  font-size: 2.5rem;
-  color: #1d1d1d;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.text-column h1 span {
-  font-weight: bold;
-}
-
-.highlight {
-  color: #022f73;
-  font-weight: 200
-}
-
-.text-column p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #444;
-}
-
-.mission-goals {
-  background: #fff5f2;
-  padding: 20px;
-  border-radius: 16px;
-  margin-top: 10px;
-}
-
-.mission-goals ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.mission-goals li {
-  padding: 10px 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-
-/* Custom Layout 2 */
-
-
-.spacex-schedule {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-  box-sizing: border-box; 
-}
-
-.schedule-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.highlight {
-  color: #f5b200;
-  font-weight: bold ;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 1rem;
-  color: #cccccc;
-  margin-bottom: 40px;
-}
-
-.schedule-card {
-  background-color: #fff;
-  color: #333;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  overflow: hidden;
-}
-
-.schedule-time {
-  width: 160px;
-  min-height: 160px;
-  padding: 20px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.day-1 {
-  background-color: #001d49;
-}
-
-.day-2 {
-  background-color: #f5b200;
-  color: #000;
-}
-
-.day-3 {
-  background-color: #001d49;
-}
-
-.schedule-content {
-  flex: 1;
-  padding: 20px 30px;
-}
-
-.schedule-content h3 {
-  margin: 0 0 10px;
-  font-size: 1.3rem;
-  color: #022f73;
-}
-
-.schedule-content p {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-.schedule-content a {
-  color: #022f73;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.schedule-image {
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-  border-radius: 50%;
-  background: radial-gradient(#ccc, #999);
-}
-
-.button-container {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.view-button {
-  background-color: #022f73;
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.view-button:hover {
-  background-color: #e0a700;
-}
-
 /* Countdown visibility fix: ensure numbers are readable on white cards */
 .countdown-con .text-gradient {
-  color: #0f172a !important; /* dark slate for contrast */
+  color: #BFD3E6; 
 }
 
+.bg-custom-color {
+  background-image: linear-gradient(135deg, #071a2f 0%, #0b2540 100%);
+}
+
+@media (max-width: 640px) {
+  .countdown-con {
+    border-radius: 1rem;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .countdown-con .text-gradient {
+    font-size: 1.25rem;
+  }
+
+  .countdown-con span {
+    font-size: 0.7rem;
+  }
+
+}

@@ -47,8 +47,7 @@ class AstronomyTheme extends Theme
 				->label('Upload Header Images')
 				->multiple()
 				->maxFiles(4)
-				->image()
-				->conversion('thumb-xl'),
+				->image(),
 			ColorPicker::make('appearance_color')
 				->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
 				->label(__('general.appearance_color')),

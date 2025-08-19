@@ -21,7 +21,7 @@
     // Create unique ID for this banner
     $bannerId = 'banner-' . uniqid();
 
-    $imagess = $currentScheduledConference->getMedia('tempest-countdown')->first();
+    $imagess = $currentScheduledConference->getMedia('astronomy-countdown')->first();
     $imagecountdown = $imagess ? $imagess->getAvailableUrl(['thumb', 'thumb-xl']) : null;
     $bannerHeight = $theme->getSetting('banner_height') ?? '700px';
 @endphp
@@ -100,49 +100,54 @@
         </div>
     </div>
 
-    <div class="countdown-section absolute left-0 right-0 -bottom-24 md:-bottom-20 z-50">
-        <div class="animate-slideUp delay-500 countdown-con w-full max-w-5xl mx-auto backdrop-blur-md bg-white rounded-2xl border border-white/20 shadow-2xl p-6"
-             style="background-image: url('{{ $imagecountdown }}');">
-             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-                
-                <div class="relative group animate-popIn delay-600">
-                    <div class="p-4 sm:p-6 bg-white rounded-xl border border-purple-200 shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                        <div class="text-center">
-                            <div id="days" class="text-4xl sm:text-5xl font-bold text-gradient mb-2">00</div>
-                            <div class="uppercase tracking-wider text-sm font-semibold text-gray-600">Days</div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="relative group animate-popIn delay-700">
-                    <div class="p-4 sm:p-6 bg-white rounded-xl border border-purple-200 shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                        <div class="text-center">
-                            <div id="hours" class="text-4xl sm:text-5xl font-bold text-gradient mb-2">00</div>
-                            <div class="uppercase tracking-wider text-sm font-semibold text-gray-600">Hours</div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="relative group animate-popIn delay-800">
-                    <div class="p-4 sm:p-6 bg-white rounded-xl border border-purple-200 shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                        <div class="text-center">
-                            <div id="minutes" class="text-4xl sm:text-5xl font-bold text-gradient mb-2">00</div>
-                            <div class="uppercase tracking-wider text-sm font-semibold text-gray-600">Minutes</div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="relative group animate-popIn delay-900">
-                    <div class="p-4 sm:p-6 bg-white rounded-xl border border-purple-200 shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                        <div class="text-center">
-                            <div id="seconds" class="text-4xl sm:text-5xl font-bold text-gradient mb-2">00</div>
-                            <div class="uppercase tracking-wider text-sm font-semibold text-gray-600">Seconds</div>
-                        </div>
-                    </div>
-                </div>
-            </div>            
+<div class="countdown-section absolute left-0 right-0 -bottom-24 md:-bottom-20 z-50">
+  <div class="animate-slideUp delay-500 countdown-con mx-auto backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1020px] h-auto">
+
+    <div class="flex flex-col md:flex-row items-center h-full">
+      
+      <!-- Header -->
+      <div class="bg-custom-color px-6 py-4 md:py-0 self-stretch flex items-center justify-center md:justify-start w-full md:w-auto rounded-l-3xl md:rounded-l-3xl md:rounded-r-none">
+        <span class="font-extrabold text-lg md:text-xl leading-tight text-gradient text-center md:text-left">
+          Our Event <br class="hidden md:block"> Program Starts In :
+        </span>
+      </div>
+
+      <!-- Countdown -->
+      <div class="flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 h-full">
+
+        <!-- Days -->
+        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+          <div id="days" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+          <div class="uppercase text-xs md:text-sm text-gray-500">Days</div>
         </div>
+
+        <!-- Hours -->
+        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+          <div id="hours" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+          <div class="uppercase text-xs md:text-sm text-gray-500">Hours</div>
+        </div>
+
+        <!-- Minutes -->
+        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+          <div id="minutes" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+          <div class="uppercase text-xs md:text-sm text-gray-500">Minutes</div>
+        </div>
+
+        <!-- Seconds -->
+        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+          <div id="seconds" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+          <div class="uppercase text-xs md:text-sm text-gray-500">Seconds</div>
+        </div>
+
+      </div>
+
     </div>
+
+  </div>
+</div>
+
+
+
 </section>
 
 <style>
@@ -210,6 +215,13 @@
 .delay-700 { animation-delay: 0.7s; }
 .delay-800 { animation-delay: 0.8s; }
 .delay-900 { animation-delay: 0.9s; }
+
+/* Increase countdown height */
+.countdown-con {
+    height: 140px;
+}
+
+
 </style>
 
 <script>
@@ -240,4 +252,6 @@
 
     const countdownTimer = setInterval(updateCountdown, 1000);
     updateCountdown();
+    
 </script>
+
