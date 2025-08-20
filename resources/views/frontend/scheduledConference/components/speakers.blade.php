@@ -10,31 +10,34 @@
 						<div class="flex flex-wrap justify-center gap-12">
 							@foreach ($role->speakers as $speaker)
 								<div class="flex flex-col items-center text-center max-w-xs">
-									<!-- Foto bulat tanpa card -->
-									<div class="mb-0 group">
+									<!-- Foto bulat dengan overlay -->
+									<div class="speaker-image-container relative h-56 w-56 rounded-full overflow-hidden group mb-0 border-4 border-gray-200">
 										@if($speaker->getFilamentAvatarUrl())
 											<img
-												class="h-56 w-56 object-cover rounded-full border-4 border-gray-200 shadow-lg transform transition-transform duration-500 hover:scale-110"
+												class="h-full w-full object-cover"
 												src="{{ $speaker->getFilamentAvatarUrl() }}"
 												alt="{{ $speaker->fullName }}"
 												onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
 											/>
-											<div class="h-56 w-56 rounded-full border-4 border-gray-200 shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 items-center justify-center hidden transform transition-transform duration-500 hover:scale-110 hover:brightness-110 hover:shadow-xl">
+											<div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 items-center justify-center hidden">
 												<span class="text-white text-4xl font-bold">
-													{{ strtoupper(substr($speaker->fullName, 0, 2)) }}
+													{{ $speaker->fullName }}
 												</span>
 											</div>
 										@else
-											<div class="h-56 w-56 rounded-full border-4 border-gray-200 shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center transform transition-transform duration-500 hover:scale-110 hover:brightness-110 hover:shadow-xl">
+											<div class="h-full w-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
 												<span class="text-white text-4xl font-bold">
-													{{ strtoupper(substr($speaker->fullName, 0, 2)) }}
+													{{ $speaker->fullName }}
 												</span>
 											</div>
 										@endif
+										<div class="speaker-overlay">
+											<h4 class="text-name text-white text-xl font-bold">{{ $speaker->fullName }}</h4>
+										</div>
 									</div>
 									
 									<!-- Card untuk nama dan info -->
-									<div class="bg-white rounded-3xl shadow-lg border border-gray-200 w-full -mt-10 relative z-10"> 
+									<div class="bg-white rounded-2xl shadow-lg border border-gray-200 w-full -mt-10 relative z-10">
 										<h4 class="text-2xl font-bold text-gray-900 mb-3">
 											{{ $speaker->fullName }}
 										</h4>
