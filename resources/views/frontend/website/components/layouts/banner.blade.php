@@ -45,6 +45,9 @@
         <div class="text-left max-w-4xl mx-auto">
             <div class="w-full">
                 <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl color-latest">{{ $currentScheduledConference->title }}</h1>
+                @if($theme->getSetting('description'))
+                    <p class="text-[17px] mb-8" style="color: {{ $theme->getSetting('description_color') }}"> {!! nl2br(e($theme->getSetting('description'))) !!}</p>    
+                @endif
                 <div class="flex flex-col space-y-4 mb-8 justify-start items-start">
                     @if($currentScheduledConference->date_start || $currentScheduledConference->date_end)
                         <div class="flex items-center justify-start">
@@ -56,10 +59,10 @@
                             <div class="text-left">
                                 @if($currentScheduledConference->date_start)
                                     @if($currentScheduledConference->date_end && $currentScheduledConference->date_start->format(Setting::get('format_date')) !== $currentScheduledConference->date_end->format(Setting::get('format_date')))
-                                        <span class="font-semibold color-latest text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
-                                        <span class="font-semibold color-latest text-lg"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold color-latest text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold color-latest text-xl"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
                                     @else
-                                        <span class="font-semibold color-latest text-lg">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold color-latest text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                     @endif
                                 @endif
                                 <div class="text-base text-white mt-1">Conference Dates</div>
@@ -75,7 +78,7 @@
                             </svg>
                         </span>
                         <div class="text-left">
-                            <span class="font-semibold color-latest text-lg">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
+                            <span class="font-semibold color-latest text-xl">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
                             <div class="text-base text-white mt-1">Conference Venue</div>
                         </div>
                     </div>
@@ -100,7 +103,7 @@
         </div>
     </div>
 
-<div class="countdown-section absolute left-0 right-0 -bottom-24 md:-bottom-20 z-50">
+<div class="countdown-section absolute left-0 right-0 -bottom-24 md:-bottom-20 z-20 ">
   <div class="animate-slideUp delay-500 countdown-con mx-auto backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1020px] h-auto">
 
     <div class="flex flex-col md:flex-row items-center h-full">
@@ -113,7 +116,7 @@
       </div>
 
       <!-- Countdown -->
-      <div class="flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 h-full">
+      <div class="countdown-container flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 h-full">
 
         <!-- Days -->
         <div class="flex flex-row md:flex-col items-center justify-center gap-1">

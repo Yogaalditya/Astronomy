@@ -42,6 +42,12 @@ class AstronomyTheme extends Theme
 			Toggle::make('enable_countdown')
 				->label('Enable Countdown on Banner')
 				->default(false),
+			TextArea::make('description')
+				->label('Description')
+				->rows(5),
+			ColorPicker::make('description_color')
+				->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
+				->label('Description Label Color'),
 			SpatieMediaLibraryFileUpload::make('images')
 				->collection('astronomy-header')
 				->label('Upload Header Images')
@@ -135,12 +141,14 @@ class AstronomyTheme extends Theme
 		return [
 			'images' => $this->getSetting('images'),
 			'appearance_color' => $this->getSetting('appearance_color'),
+			'description_color' => $this->getSetting('description_color'),
 			'layouts' => $this->getSetting('layouts') ?? [] ,
 			'name_content' => $this->getSetting('name_content'),
 			'about' => $this->getSetting('about'),
 			'top_navigation' => $this->getSetting('top_navigation'),
 			'enable_countdown' => $this->getSetting('enable_countdown'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
+			'description' => $this->getSetting('description'),
 		];
 	}
 }
