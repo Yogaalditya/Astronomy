@@ -34,10 +34,18 @@
     @vite(['resources/frontend/js/frontend.js'])
 
     @livewireStyles
+    <!-- Splide core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
     
     @if(isset($styleSheet) && !empty($styleSheet))
         <link rel="stylesheet" type="text/css" href="{{ $styleSheet }}" />
     @endif
+
+    <!-- Splide core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- Splide Auto Scroll Extension -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.min.js"></script>
 
     @hook('Frontend::Views::Head')
 
