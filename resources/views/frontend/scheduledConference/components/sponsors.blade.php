@@ -101,12 +101,12 @@
                     type      : 'loop',
                     drag      : 'free',
                     focus     : 'center',
-                    perPage   : 3,       // tampil 3 sponsor sekaligus
-                    gap       : '1rem',  // jarak antar sponsor
-                    arrows    : true,   // kalau pakai auto scroll biasanya tanpa panah
-                    pagination: true,   // bisa disembunyiin juga
+                    perPage   : 3,
+                    gap       : '1rem',
+                    arrows    : true,
+                    pagination: true,
                     autoScroll: {
-                        speed: 1,        // semakin besar, semakin cepat
+                        speed: 1,
                     },
                 }).mount(window.splide.Extensions);
             });

@@ -37,8 +37,8 @@
                                     class="flex items-center justify-center transition duration-300 ease-in-out hover:scale-105">
                                     <img
                                         style="
-                                            max-width: 250px;
-                                            max-height: 120px;
+                                            max-width: 200px;
+                                            max-height: 100px;
                                             object-fit: contain;
                                         "
                                         src="{{ $partner->getFirstMediaUrl('logo') }}"
@@ -68,8 +68,8 @@
                     type      : 'loop',
                     drag      : 'free',
                     focus     : 'center',
-                    perPage   : 3,   // misalnya tampil 2 partner sekaligus
-                    gap       : '1.5rem',
+                    perPage   : 3,
+                    gap       : '1rem',
                     arrows    : true,
                     pagination: true,
                     autoScroll: {

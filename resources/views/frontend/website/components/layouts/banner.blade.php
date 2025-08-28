@@ -123,18 +123,24 @@
           <div id="days" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
           <div class="uppercase text-xs md:text-sm text-gray-500">Days</div>
         </div>
+        <!-- Divider (desktop only) -->
+        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
 
         <!-- Hours -->
         <div class="flex flex-row md:flex-col items-center justify-center gap-1">
           <div id="hours" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
           <div class="uppercase text-xs md:text-sm text-gray-500">Hours</div>
         </div>
+        <!-- Divider (desktop only) -->
+        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
 
         <!-- Minutes -->
         <div class="flex flex-row md:flex-col items-center justify-center gap-1">
           <div id="minutes" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
           <div class="uppercase text-xs md:text-sm text-gray-500">Minutes</div>
         </div>
+        <!-- Divider (desktop only) -->
+        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
 
         <!-- Seconds -->
         <div class="flex flex-row md:flex-col items-center justify-center gap-1">

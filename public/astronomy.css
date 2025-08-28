@@ -34,8 +34,12 @@ body {
 }
 
 .button-banner.submit {
-    background-color: oklch(var(--p));
-    color: #fff;
+    background-image: linear-gradient(
+        135deg,
+        #071a2f 0%,
+        #0b2540 100%
+    );
+    color: #BFD3E6;
     /* Teks putih */
 }
 
@@ -1388,11 +1392,16 @@ body {
 }
 
 .news-card:hover .card-title {
-    background: rgba(2, 47, 115, 0.9);
-    color: #fff;
+    background-image: linear-gradient(
+        135deg,
+        #071a2f 0%,
+        #0b2540 100%
+    );
+    color: #BFD3E6;
     margin-top: 80px;  
     padding: 10px;
     border-radius: 4px;
+    justify-content: center;
     transform: translateY(50%);
 }
 
@@ -1407,7 +1416,7 @@ body {
 
 .news-card:hover .date-badge {
     background: rgba(255, 255, 255, 0.95);
-    color: #3487f7;
+    color: #022f73;
 }
 
 .card-image {
@@ -1479,9 +1488,9 @@ body {
 }
 
 .cta-link {
-    border: 2px solid #3487f7;
+    border: 2px solid #022f73;
     border-radius: 4px;
-    color: #3487f7;
+    color: #022f73;
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
@@ -1495,9 +1504,13 @@ body {
 }
 
 .cta-link:hover {
-    background-color: #3487f7;
+    background-image: linear-gradient(
+        135deg,
+        #071a2f 0%,
+        #0b2540 100%
+    );
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: #fff;
+    color: #BFD3E6;
 }
 
 /* Responsive adjustments for news cards */
