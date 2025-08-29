@@ -28,7 +28,7 @@
 
 <section 
     id="{{ $bannerId }}" 
-    class="hero-banner relative w-full -mt-16 flex items-center justify-center text-white @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
+    class="hero-banner relative w-full -mt-16 flex items-center justify-center text-white mb-[220px] md:mb-[200px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
     style="
         height: {{ $bannerHeight }};
         @if($bannerUrl)
