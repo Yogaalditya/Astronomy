@@ -15,6 +15,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Partners</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4">Special thanks to our incredible partners for being part of our journey.</p>
         </div>
 
         @if ($totalSlides > 0)
