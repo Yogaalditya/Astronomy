@@ -1,0 +1,88 @@
+<!-- Welcome 2026: New Year Celebration & Gathering (HTML only, CSS is external in public/astronomy.css) -->
+
+<section class="ny2026-hero" aria-labelledby="ny2026-hero-title">
+  <div class="ny2026-container">
+    <div class="ny2026-hero__content">
+      <h1 id="ny2026-hero-title" class="ny2026-hero__title">Welcome 2026: New Year Celebration & Gathering</h1>
+      <p class="ny2026-hero__subtitle">Start the new year with precious moments! Join the celebration and short conference to connect, learn, and inspire each other.</p>
+      <div class="ny2026-hero__actions">
+        <a href="#" class="ny2026-btn ny2026-btn--primary">Register Now</a>
+        <a href="#about" class="ny2026-btn ny2026-btn--outline">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="ny2026-about" aria-labelledby="ny2026-about-title">
+  <div class="ny2026-container ny2026-about__grid">
+    <div class="ny2026-about__text">
+      <h2 id="ny2026-about-title" class="ny2026-section__title">About the Event</h2>
+      <p class="ny2026-section__lead">Welcome 2026: New Year Celebration & Gathering combines New Year celebrations with a warm and meaningful mini-conference.</p>
+      <ul class="ny2026-list ny2026-list--check">
+        <li>Share inspiration through short sessions (light talks) and networking.</li>
+        <li>Expanding connections across communities and industries.</li>
+        <li>Building a spirit of collaboration for projects in 2026.</li>
+      </ul>
+    </div>
+    <div class="ny2026-about__media">
+      <img src="/storage/newyear.jpg" alt="The excitement of New Year's celebrations and networking" class="ny2026-image" />
+    </div>
+  </div>
+</section>
+
+<section class="ny2026-goals" aria-labelledby="ny2026-goals-title">
+  <div class="ny2026-container">
+    <h2 id="ny2026-goals-title" class="ny2026-section__title">Event Objectives</h2>
+    <div class="ny2026-cards">
+      <article class="ny2026-card">
+        <h3 class="ny2026-card__title">Celebrating Together</h3>
+        <p class="ny2026-card__text">Creating positive moments to welcome 2026 with a warm and inclusive atmosphere.</p>
+      </article>
+      <article class="ny2026-card">
+        <h3 class="ny2026-card__title">Networking</h3>
+        <p class="ny2026-card__text">Bringing together participants from various industry backgrounds for new collaborations.</p>
+      </article>
+      <article class="ny2026-card">
+        <h3 class="ny2026-card__title">Sharing Insights</h3>
+        <p class="ny2026-card__text">Short sessions containing practical insights so that participants gain ideas that can be immediately applied.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="ny2026-benefits" aria-labelledby="ny2026-benefits-title">
+  <div class="ny2026-container">
+    <h2 id="ny2026-benefits-title" class="ny2026-section__title">Advantages & Benefits for Participants</h2>
+    <div class="ny2026-cards ny2026-cards--grid">
+      <article class="ny2026-card ny2026-card--benefit">
+        <h3 class="ny2026-card__title">Quality Networking</h3>
+        <p class="ny2026-card__text">Build new relationships with relevant professionals and communities.</p>
+      </article>
+      <article class="ny2026-card ny2026-card--benefit">
+        <h3 class="ny2026-card__title">Practical Insights</h3>
+        <p class="ny2026-card__text">Gain brief but impactful insights through sharing sessions.</p>
+      </article>
+      <article class="ny2026-card ny2026-card--benefit">
+        <h3 class="ny2026-card__title">Positive Atmosphere</h3>
+        <p class="ny2026-card__text">Start the year with renewed energy and high motivation.</p>
+      </article>
+      <article class="ny2026-card ny2026-card--benefit">
+        <h3 class="ny2026-card__title">Inclusive community</h3>
+        <p class="ny2026-card__text">Open to all; newcomer-friendly event.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="ny2026-cta" aria-labelledby="ny2026-cta-title">
+  <div class="ny2026-container ny2026-cta__box">
+    <div class="ny2026-cta__text">
+      <h2 id="ny2026-cta-title" class="ny2026-cta__title">Ready to welcome 2026 with renewed enthusiasm?</h2>
+      <p class="ny2026-cta__desc">Secure your spot now and be part of this memorable moment.</p>
+    </div>
+    <div class="ny2026-cta__actions">
+      <a href="#" class="ny2026-btn ny2026-btn--primary">Register Now</a>
+      <a href="#" class="ny2026-btn ny2026-btn--ghost">See the Schedule</a>
+    </div>
+  </div>
+</section>

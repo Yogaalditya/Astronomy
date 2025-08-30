@@ -1659,3 +1659,148 @@ body {
     font-size: 1.75rem !important;
     margin-bottom: 10px !important;
 }
+
+/* NY2026: Welcome 2026 styles */
+.ny2026-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.ny2026-hero {
+  background-image: linear-gradient(135deg, #071a2f 0%, #0b2540 100%);
+  color: #BFD3E6;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.ny2026-hero__content { max-width: 900px; }
+.ny2026-hero__title {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: #BFD3E6 !important;
+}
+@media (min-width: 1024px) { .ny2026-hero__title { font-size: 3rem; } }
+
+.ny2026-hero__subtitle {
+  margin-top: 1rem;
+  color: #d6e3f0;
+  line-height: 1.7;
+}
+
+.ny2026-hero__actions { display: flex; gap: .75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+.ny2026-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .75rem 1.25rem;
+  font-weight: 600;
+  border-radius: .75rem;
+  transition: all .25s ease;
+  text-decoration: none;
+}
+
+.ny2026-btn--primary {
+  background-color: oklch(var(--p));
+  color: #BFD3E6 !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+}
+.ny2026-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,.25); }
+
+.ny2026-btn--outline {
+  background: transparent;
+  color: #BFD3E6 !important;
+  border: 2px solid oklch(var(--p));
+}
+.ny2026-btn--outline:hover { background: oklch(var(--p)); color: #fff; }
+
+.ny2026-btn--ghost {
+  background: transparent;
+  color: #BFD3E6 !important;
+  border: 1px solid rgba(191, 211, 230, .35);
+}
+.ny2026-btn--ghost:hover { background: rgba(191, 211, 230, .1); }
+
+/* Section base */
+.ny2026-section__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  letter-spacing: -0.02em;
+}
+.ny2026-section__title::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 4px;
+  background: oklch(var(--p));
+  margin-top: .75rem;
+  border-radius: 2px;
+}
+
+.ny2026-section__lead { color: #475569; margin-top: .75rem; }
+
+/* About */
+.ny2026-about { background: #F5F5F5; padding: 4rem 0; }
+.ny2026-about__grid { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 900px) { .ny2026-about__grid { grid-template-columns: 1.1fr 1fr; gap: 3rem; } }
+
+.ny2026-about__text p { line-height: 1.8; color: #4b5563; }
+
+.ny2026-list { margin: 1rem 0 0; padding: 0; list-style: none; }
+.ny2026-list--check li { position: relative; padding-left: 28px; margin-bottom: .75rem; color: #475569; }
+.ny2026-list--check li::before { content: '→'; position: absolute; left: 0; color: oklch(var(--p)); font-weight: 700; }
+
+.ny2026-image { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,.1); }
+
+/* Goals */
+.ny2026-goals { padding: 4rem 0; }
+.ny2026-cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .ny2026-cards { grid-template-columns: repeat(3, 1fr); } }
+
+.ny2026-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.ny2026-card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,.08); }
+.ny2026-card__title { font-weight: 700; color: #1f2937; margin-bottom: .25rem; }
+.ny2026-card__text { color: #4b5563; line-height: 1.7; }
+.ny2026-card--benefit { border-top: 3px solid oklch(var(--p)); }
+
+/* Benefits grid variant */
+.ny2026-cards--grid { grid-template-columns: 1fr; }
+@media (min-width: 720px) { .ny2026-cards--grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .ny2026-cards--grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* CTA */
+.ny2026-cta { padding: 3.5rem 0; }
+.ny2026-cta__box {
+  background-image: linear-gradient(135deg, #071a2f 0%, #0b2540 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #BFD3E6;
+}
+@media (max-width: 720px) { .ny2026-cta__box { flex-direction: column; align-items: flex-start; } }
+
+.ny2026-cta__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #BFD3E6 !important;
+}
+.ny2026-cta__desc { color: #d6e3f0; margin-top: .25rem; }
+.ny2026-cta__actions { display: flex; gap: .5rem; flex-wrap: wrap; }
