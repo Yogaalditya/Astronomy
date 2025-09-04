@@ -104,7 +104,7 @@
                     perPage   : 3,
                     gap       : '1rem',
                     arrows    : true,
-                    pagination: true,
+                    pagination: false,
                     autoScroll: {
                         speed: 1,
                     },
