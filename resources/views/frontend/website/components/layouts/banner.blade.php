@@ -40,7 +40,7 @@
         @endif
     "
 >
-    <div class="container relative ml-[370px] px-4 z-10">
+    <div class="relative mx-auto px-4 z-10 w-full max-w-[1155px]">
         <div class="text-left max-w-4xl">
             <div class="w-full">
                 <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl color-latest">{{ $currentScheduledConference->title }}</h1>
@@ -102,7 +102,7 @@
         </div>
         <div class="countdown-section absolute left-0 right-0 -bottom-52 md:-bottom-44 z-20">
 
-          <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1150px] h-auto">
+          <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1155px] h-auto">
 
             <div class="flex flex-col md:flex-row items-center h-full">
               
