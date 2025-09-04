@@ -28,7 +28,7 @@
 
 <section 
     id="{{ $bannerId }}" 
-    class="hero-banner relative w-full -mt-16 flex items-center justify-center text-white mb-[220px] md:mb-[200px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
+    class="hero-banner relative w-full -mt-16 flex items-center justify-center text-white mb-[260px] md:mb-[200px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
     style="
         height: {{ $bannerHeight }};
         @if($bannerUrl)
@@ -40,9 +40,8 @@
         @endif
     "
 >
-<script src="{{ asset('js/astronomy.js') }}"></script>
-    <div class="container mx-auto px-4 z-10">
-        <div class="text-left max-w-4xl mx-auto">
+    <div class="container relative ml-[370px] px-4 z-10">
+        <div class="text-left max-w-4xl">
             <div class="w-full">
                 <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl color-latest">{{ $currentScheduledConference->title }}</h1>
                 @if($theme->getSetting('description'))
@@ -101,60 +100,59 @@
                 @endif
             </div>
         </div>
+        <div class="countdown-section absolute left-0 right-0 -bottom-52 md:-bottom-44 z-20">
+
+          <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1150px] h-auto">
+
+            <div class="flex flex-col md:flex-row items-center h-full">
+              
+              <!-- Header -->
+              <div class="bg-custom-color px-6 py-4 md:py-0 self-stretch flex items-center justify-center md:justify-start w-full md:w-auto rounded-l-3xl md:rounded-l-3xl md:rounded-r-none">
+                <span class="font-extrabold text-lg md:text-xl leading-tight text-gradient text-center md:text-left">
+                  Our Event <br class="hidden md:block"> Program Starts In :
+                </span>
+              </div>
+
+              <!-- Countdown -->
+              <div class="countdown-container flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 h-full">
+
+                <!-- Days -->
+                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                  <div id="days" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                  <div class="uppercase text-xs md:text-sm text-gray-500">Days</div>
+                </div>
+                <!-- Divider (desktop only) -->
+                <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
+
+                <!-- Hours -->
+                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                  <div id="hours" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                  <div class="uppercase text-xs md:text-sm text-gray-500">Hours</div>
+                </div>
+                <!-- Divider (desktop only) -->
+                <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
+
+                <!-- Minutes -->
+                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                  <div id="minutes" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                  <div class="uppercase text-xs md:text-sm text-gray-500">Minutes</div>
+                </div>
+                <!-- Divider (desktop only) -->
+                <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
+
+                <!-- Seconds -->
+                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                  <div id="seconds" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                  <div class="uppercase text-xs md:text-sm text-gray-500">Seconds</div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
     </div>
-
-<div class="countdown-section absolute left-0 right-0 -bottom-24 md:-bottom-20 z-20 ">
-  <div class="animate-slideUp delay-500 countdown-con mx-auto backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1020px] h-auto">
-
-    <div class="flex flex-col md:flex-row items-center h-full">
-      
-      <!-- Header -->
-      <div class="bg-custom-color px-6 py-4 md:py-0 self-stretch flex items-center justify-center md:justify-start w-full md:w-auto rounded-l-3xl md:rounded-l-3xl md:rounded-r-none">
-        <span class="font-extrabold text-lg md:text-xl leading-tight text-gradient text-center md:text-left">
-          Our Event <br class="hidden md:block"> Program Starts In :
-        </span>
-      </div>
-
-      <!-- Countdown -->
-      <div class="countdown-container flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 h-full">
-
-        <!-- Days -->
-        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-          <div id="days" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-          <div class="uppercase text-xs md:text-sm text-gray-500">Days</div>
-        </div>
-        <!-- Divider (desktop only) -->
-        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
-
-        <!-- Hours -->
-        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-          <div id="hours" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-          <div class="uppercase text-xs md:text-sm text-gray-500">Hours</div>
-        </div>
-        <!-- Divider (desktop only) -->
-        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
-
-        <!-- Minutes -->
-        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-          <div id="minutes" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-          <div class="uppercase text-xs md:text-sm text-gray-500">Minutes</div>
-        </div>
-        <!-- Divider (desktop only) -->
-        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
-
-        <!-- Seconds -->
-        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-          <div id="seconds" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-          <div class="uppercase text-xs md:text-sm text-gray-500">Seconds</div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
 
 
 </section>
