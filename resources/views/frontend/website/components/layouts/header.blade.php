@@ -42,7 +42,7 @@
     <div id="navbar" class="navbar-text-color sticky-navbar navbar-container top-0 shadow z-50 w-full transition-all duration-500 ease-in-out ">
 
         <!-- Top Row: Logo & User -->
-        <div class="navbar-astronomy navbar-custom-astronomy-title container mx-auto px-4 lg:px-8">
+        <div class="navbar-astronomy navbar-custom-astronomy-title container mx-auto pl-0 pr-4 lg:pr-8">
             <div class="flex items-center justify-between navbar-top-section h-16 "> <!-- JUDULNYA -->
                 <!-- Mobile Menu & Logo -->
                 <div class="flex items-center gap-x-6">
@@ -51,7 +51,7 @@
                     </div>
                     <x-astronomy::logo
                         :headerLogo="$headerLogo"
-                        class="font-bold navbar-logo h-8 w-auto"
+                        class="font-bold navbar-logo h-8 w-auto ml-8 lg:ml-[51px]"
                     />
                 </div>
 

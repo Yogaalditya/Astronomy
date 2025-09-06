@@ -94,11 +94,17 @@ body {
 
 .navbar-custom-astronomy a {
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* allow underline to render beyond text if needed */
     transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-.navbar-custom-astronomy a::before {
+/* Underline only matches the text width */
+.navbar-custom-astronomy a span {
+    position: relative;
+    display: inline-block; /* width equals text content */
+}
+
+.navbar-custom-astronomy a span::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -111,7 +117,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.navbar-custom-astronomy a:hover::before {
+.navbar-custom-astronomy a:hover span::after {
     transform: scaleX(1);
     transform-origin: left;
 }
