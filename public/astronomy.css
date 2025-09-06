@@ -303,6 +303,7 @@ body {
 .home-astronomy.section-1 {
     max-width: 100%;
     margin: auto;
+    padding: 0 100px; /* equal left/right padding */
     padding-top: 6rem !important;
     padding-bottom: 6rem !important;
 }
@@ -447,7 +448,7 @@ body {
     }
 
     .home-astronomy.section-1 {
-        padding: 0 1.5rem;
+        padding: 0 24px; /* mobile-friendly horizontal padding */
     }
 
     .image-content img {
@@ -1634,15 +1635,8 @@ body {
     overflow: hidden;
     text-align: center;
     transition: .4s ease;
-}
-
-.speaker-overlay .text-name {
-    transform: translateY(200%);
-}
-
-.speaker-image-container:hover .speaker-overlay {
-    height: 100%;
-
+    align-content: center;
+    justify-content: center;
 }
 
 /* Custom Card Styles */
@@ -1741,7 +1735,7 @@ body {
   width: 72px;
   height: 4px;
   background: oklch(var(--p));
-  margin-top: .75rem;
+  margin-top: 0rem;
   border-radius: 2px;
 }
 
@@ -1774,33 +1768,36 @@ body {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .ny2026-card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,.08); }
-.ny2026-card__title { font-weight: 700; color: #1f2937; margin-bottom: .25rem; }
+.ny2026-card__title { font-weight: 600; color: #1f2937; margin-bottom: .25rem; }
 .ny2026-card__text { color: #4b5563; line-height: 1.7; }
 .ny2026-card--benefit { border-top: 3px solid oklch(var(--p)); }
 
-/* Benefits grid variant */
-.ny2026-cards--grid { grid-template-columns: 1fr; }
-@media (min-width: 720px) { .ny2026-cards--grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .ny2026-cards--grid { grid-template-columns: repeat(4, 1fr); } }
+/* Simple, scalable card grid: works for any number of cards */
+@media (min-width: 1024px) {
+  .ny2026-cards--grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;           /* center 1–3 cards and last row */
+  }
 
-/* CTA */
-.ny2026-cta { padding: 3.5rem 0; }
-.ny2026-cta__box {
-  background-image: linear-gradient(135deg, #071a2f 0%, #0b2540 100%);
-  border-radius: 16px;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: #BFD3E6;
+  .ny2026-cards--grid .ny2026-card {
+    flex: 1 1 calc(25% - 1.125rem);    /* 4 columns */
+    max-width: calc(25% - 1.125rem);
+  }
 }
-@media (max-width: 720px) { .ny2026-cta__box { flex-direction: column; align-items: flex-start; } }
 
-.ny2026-cta__title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #BFD3E6 !important;
+/* Mobile: 1 column, then 2 columns at >=720px */
+@media (max-width: 1023px) {
+  .ny2026-cards--grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 720px) {
+    .ny2026-cards--grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
-.ny2026-cta__desc { color: #d6e3f0; margin-top: .25rem; }
-.ny2026-cta__actions { display: flex; gap: .5rem; flex-wrap: wrap; }

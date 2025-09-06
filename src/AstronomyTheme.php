@@ -27,9 +27,9 @@ class AstronomyTheme extends Theme
 	public function boot()
 	{
 		if (app()->getCurrentScheduledConference()?->getMeta('theme') == 'Astronomy') {
-            Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), prefix: 'website');
-            Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/scheduledConference/components'), prefix: 'scheduledConference');
-        }
+			Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), prefix: 'website');
+			Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/scheduledConference/components'), prefix: 'scheduledConference');
+		}
 		Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), 'astronomy');
 	}
 
@@ -83,6 +83,29 @@ class AstronomyTheme extends Theme
 						->label('Latest News')
 						->icon('heroicon-o-newspaper')
 						->maxItems(1),
+					// New layout template 1 block
+					Builder\Block::make('layout-template-1')
+						->label('Layout Template 1')
+						->icon('heroicon-o-rectangle-stack')
+						->schema([
+							TextInput::make('section_title')
+								->label('Section Title')
+								->placeholder('Advantages & Benefits for Participants'),
+							Repeater::make('cards')
+								->label('Cards')
+								->addActionLabel('Add Card')
+								->schema([
+									TextInput::make('title')
+										->label('Title')
+										->required(),
+									Textarea::make('description')
+										->label('Description')
+										->rows(3)
+										->required(),
+								])
+								->minItems(1)
+								->columns(1),
+						]),
 					Builder\Block::make('layouts')
 						->label('Custom Content')
 						->icon('heroicon-m-bars-3-bottom-left')

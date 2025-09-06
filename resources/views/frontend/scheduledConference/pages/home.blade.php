@@ -37,6 +37,9 @@
                             <x-scheduledConference::latest-news />
                         @endif
                     @break
+                    @case('layout-template-1')
+                        <x-scheduledConference::layout-template-1 :data="$layout['data']" />
+                    @break
                 @endswitch
             @endforeach
         @endif
