@@ -38,7 +38,7 @@
 									
 									<!-- Card untuk nama dan info -->
 									<div class="bg-white rounded-3xl shadow-lg border border-gray-200 w-[110%] -mt-10 relative z-10">
-										<h4 class="text-2xl font-bold text-gray-900 mb-3">
+										<h4 class="text-2xl font-bold text-gray-900 mt-4">
 											{{ $speaker->fullName }}
 										</h4>
 

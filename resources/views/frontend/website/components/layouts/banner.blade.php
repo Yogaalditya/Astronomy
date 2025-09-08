@@ -23,7 +23,7 @@
 
     $imagess = $currentScheduledConference->getMedia('astronomy-countdown')->first();
     $imagecountdown = $imagess ? $imagess->getAvailableUrl(['thumb', 'thumb-xl']) : null;
-    $bannerHeight = $theme->getSetting('banner_height') ?? '760px';
+    $bannerHeight = $theme->getSetting('banner_height') ?? '770px';
 @endphp
 
 <section 
