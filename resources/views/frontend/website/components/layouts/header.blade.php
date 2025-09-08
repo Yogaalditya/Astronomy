@@ -39,7 +39,7 @@
 @endif
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
-    <div id="navbar" class="navbar-text-color sticky-navbar navbar-container top-0 shadow z-50 w-full transition-all duration-500 ease-in-out ">
+    <div id="navbar" class="navbar-text-color sticky-navbar shadow z-50 w-full transition-all duration-500 ease-in-out ">
 
         <!-- Top Row: Logo & User -->
         <div class="navbar-astronomy navbar-custom-astronomy-title container mx-auto pl-0 pr-4 lg:pr-8">

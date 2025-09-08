@@ -7,6 +7,7 @@
 }
 
 body {
+    margin: 0; /* remove default browser margin to prevent top white gap */
     background-color: #FAFAFA;
 }
 
@@ -79,17 +80,42 @@ body {
 }
 
 .navbar-container {
-    background-image: linear-gradient(
-        135deg,
-        #071a2f 0%,
-        #0b2540 100%
-    ) !important;
-    backdrop-filter: blur(6px);
+    background: transparent !important;
+    backdrop-filter: none;
     position: sticky;
+}
+
+/* Make top publisher bar transparent */
+.navbar-publisher {
+    background: transparent !important;
+    background-image: none !important;
 }
 
 .navbar-text-color {
     color: #BFD3E6; 
+}
+
+/* Ensure full transparency for navbar containers */
+#navbar,
+.sticky-navbar {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+#navbar .navbar-astronomy,
+#navbar .navbar-custom-astronomy,
+#navbar .navbar-custom-astronomy-title,
+#navbar .navbar-top-section,
+#navbar .navbar-menu-section {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Hide the separator line to avoid light stripe */
+#navbar .navbar-separator {
+    border-color: transparent !important;
 }
 
 .navbar-custom-astronomy a {

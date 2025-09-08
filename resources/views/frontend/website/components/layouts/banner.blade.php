@@ -23,12 +23,12 @@
 
     $imagess = $currentScheduledConference->getMedia('astronomy-countdown')->first();
     $imagecountdown = $imagess ? $imagess->getAvailableUrl(['thumb', 'thumb-xl']) : null;
-    $bannerHeight = $theme->getSetting('banner_height') ?? '700px';
+    $bannerHeight = $theme->getSetting('banner_height') ?? '760px';
 @endphp
 
 <section 
     id="{{ $bannerId }}" 
-    class="hero-banner relative w-full -mt-16 flex items-center justify-center text-white mb-[260px] md:mb-[200px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
+    class="hero-banner relative w-full -mt-[142px] flex items-center justify-center text-white mb-[260px] md:mb-[200px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
     style="
         height: {{ $bannerHeight }};
         @if($bannerUrl)
