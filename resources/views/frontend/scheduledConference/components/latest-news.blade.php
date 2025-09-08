@@ -42,11 +42,15 @@
 						</div>
 						
 						<!-- Background Image Circle -->
-						<div class="card-image" style="background-image: url('{{ $imageUrl }}');"></div>
+						<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" aria-label="{{ $announcement->title }}" class="block">
+							<div class="card-image" style="background-image: url('{{ $imageUrl }}');"></div>
+						</a>
 						
 						<!-- Title -->
 						<h3 class="card-title">
-							{{ Str::limit($announcement->title, 70) }}
+							<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" class="block" style="color: inherit; text-decoration: none;">
+								{{ Str::limit($announcement->title, 70) }}
+							</a>
 						</h3>
 						
 						<!-- Summary -->
@@ -59,7 +63,7 @@
 							<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" 
 							   class="cta-link">
 								Read More
-							</a>
+								</a>
 						</div>
 					</article>
 				@endforeach
