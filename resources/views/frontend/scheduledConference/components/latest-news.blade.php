@@ -1,6 +1,6 @@
 @if ($currentScheduledConference)
 <section class="latest-news section-background py-24">
-	<div class="container mx-auto px-4 max-w-7xl">
+	<div class="latest-news-container">
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
 			<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
