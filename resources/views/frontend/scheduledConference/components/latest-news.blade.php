@@ -47,7 +47,7 @@
 						</a>
 						
 						<!-- Title -->
-						<h3 class="card-title">
+						<h3 class="card-title color-latest">
 							<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" class="block" style="color: inherit; text-decoration: none;">
 								{{ Str::limit($announcement->title, 70) }}
 							</a>
@@ -59,7 +59,7 @@
 						</p>
 						
 						<!-- CTA Container -->
-						<div class="card-cta">
+						<div class="card-cta color-latest">
 							<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" 
 							   class="cta-link">
 								Read More

@@ -43,7 +43,7 @@
 										</h4>
 
 										@if ($speaker->getMeta('affiliation'))
-											<p class="text-lg text-[#022f73] font-medium mb-4">
+											<p class="text-lg color-latest font-medium mb-4">
 												{{ $speaker->getMeta('affiliation') }}
 											</p>
 										@endif
