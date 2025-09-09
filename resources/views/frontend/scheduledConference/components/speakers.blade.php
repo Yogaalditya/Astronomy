@@ -1,13 +1,13 @@
 @if ($currentScheduledConference?->speakers->isNotEmpty())
 <section id="speakers">
-	<div class="container mx-auto w-full px-4 max-w-7xl">
+	<div class="speakers-container">
 		<div class="space-y-24">
 			@foreach ($currentScheduledConference->speakerRoles as $role)
 				@if ($role->speakers->isNotEmpty())
 					<div class="flex flex-col items-center">
 						<h3 class="text-4xl font-bold text-gray-800 mb-16 text-center">{{ $role->name }}
 						</h3>
-						<div class="flex flex-wrap justify-center gap-12">
+						<div class="flex flex-wrap justify-center" style="gap: 75px;">
 							@foreach ($role->speakers as $speaker)
 								<div class="flex flex-col items-center text-center max-w-xs">
 									<!-- Foto bulat dengan overlay -->
@@ -37,7 +37,7 @@
 									</div>
 									
 									<!-- Card untuk nama dan info -->
-									<div class="bg-white rounded-3xl shadow-lg border border-gray-200 w-[110%] -mt-10 relative z-10">
+									<div class="bg-white rounded-3xl shadow-lg border border-gray-200 w-[115%] -mt-14 relative z-10">
 										<h4 class="text-2xl font-bold text-gray-900 mt-4">
 											{{ $speaker->fullName }}
 										</h4>

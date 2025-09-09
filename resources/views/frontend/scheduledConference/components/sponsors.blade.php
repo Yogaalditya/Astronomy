@@ -35,7 +35,7 @@
 
 @if ($sponsorLevels->isNotEmpty() || $sponsorsWithoutLevel->isNotEmpty())
 <section id="sponsors" class="section-background py-20">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div class="sponsors-container">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Sponsors</h2>
             <p class="text-gray-600 max-w-2xl mx-auto mt-4">Thank you to all our amazing sponsors who make our work possible</p>
