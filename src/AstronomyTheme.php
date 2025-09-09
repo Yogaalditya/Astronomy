@@ -106,7 +106,35 @@ class AstronomyTheme extends Theme
 								->minItems(1)
 								->columns(1),
 						]),
-					Builder\Block::make('layouts')
+					Builder\Block::make('layout-template-2')
+							->label('Layout Template 2 (Hero)')
+							->icon('heroicon-o-rectangle-group')
+							->schema([
+								TextInput::make('title')
+									->label('Title')
+									->required(),
+								Textarea::make('description')
+									->label('Description')
+									->rows(3),
+								SpatieMediaLibraryFileUpload::make('background_image')
+									->collection('astronomy-hero')
+									->label('Background Image')
+									->image()
+									->maxFiles(1),
+								Repeater::make('buttons')
+									->label('Buttons')
+									->schema([
+										TextInput::make('text')->label('Text')->required(),
+										TextInput::make('url')->label('URL')->required()->url(),
+										Select::make('style')->label('Style')->options([
+											'primary' => 'Primary',
+											'outline' => 'Outline',
+										])->default('primary'),
+									])
+									->columns(2)
+									->minItems(0),
+							]),
+						Builder\Block::make('layouts')
 						->label('Custom Content')
 						->icon('heroicon-m-bars-3-bottom-left')
 						->schema([

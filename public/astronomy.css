@@ -7,7 +7,7 @@
 }
 
 body {
-    margin: 0; /* remove default browser margin to prevent top white gap */
+    margin: 0;
     background-color: #FAFAFA;
 }
 
@@ -35,13 +35,8 @@ body {
 }
 
 .button-banner.submit {
-    background-image: linear-gradient(
-        135deg,
-        #071a2f 0%,
-        #0b2540 100%
-    );
+    background-color: oklch(var(--p));
     color: #BFD3E6;
-    /* Teks putih */
 }
 
 .navigation-menu-mobile {

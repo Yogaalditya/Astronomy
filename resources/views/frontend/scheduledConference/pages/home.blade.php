@@ -40,6 +40,9 @@
                     @case('layout-template-1')
                         <x-scheduledConference::layout-template-1 :data="$layout['data']" />
                     @break
+                    @case('layout-template-2')
+                        <x-scheduledConference::layout-template-2 :data="$layout['data']" />
+                    @break
                 @endswitch
             @endforeach
         @endif
