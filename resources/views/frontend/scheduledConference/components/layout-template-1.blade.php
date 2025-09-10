@@ -10,7 +10,7 @@
 @endphp
     
 @if (!empty($cards))
-<section class="ny2026-benefits py-8 md:py-12 px-4 md:px-0" aria-labelledby="ny2026-benefits-title">
+<section class="ny2026-benefits py-8 md:py-12" aria-labelledby="ny2026-benefits-title">
     <div class="ny2026-container">
         @if ($sectionTitle)
             <h2 id="ny2026-benefits-title" class="ny2026-section__title mb-6">{{ $sectionTitle }}</h2>
