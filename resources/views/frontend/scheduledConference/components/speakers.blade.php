@@ -49,7 +49,7 @@
 										@endif
 										
 										@if($speaker->getMeta('scopus_url') || $speaker->getMeta('google_scholar_url') || $speaker->getMeta('orcid_url'))
-											<div class="cf-committee-scholar flex justify-center items-center gap-3 mb-4">
+											<div class="flex justify-center items-center gap-3 mb-4">
 												@if($speaker->getMeta('orcid_url'))
 													<a href="{{ $speaker->getMeta('orcid_url') }}" target="_blank" class="hover:scale-110 transition-transform">
 														<x-academicon-orcid class="w-6 h-6 text-[#A6CE39]" />
