@@ -5,7 +5,7 @@
 
 <!-- Top Navigation Bar -->
 @if(App\Facades\Plugin::getPlugin('Astronomy')->getSetting('top_navigation'))
-<div class="navbar-publisher bg-gradient-to-r text-black top-0 w-full font-semibold z-[60]">
+<div class="navbar-publisher bg-gradient-to-r text-black top-0 w-full font-semibold z-[60] font-orbitron">
     <!-- Top Row: Logo & User Navigation -->
     <div class="container mx-auto px-4 lg:px-8 h-16 flex items-center justify-between">
         <!-- Logo Section -->
@@ -22,7 +22,8 @@
         <div class="hidden lg:flex items-center gap-x-6">
             <x-astronomy::navigation-menu
             :items="$userNavigationMenu"
-            class="flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200"
+            :avatar="true"
+            class="menu-underline flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200"
             />
         </div>
     </div>
@@ -39,48 +40,46 @@
 @endif
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
-    <div id="navbar" class="navbar-text-color sticky-navbar shadow z-50 w-full transition-all duration-500 ease-in-out ">
+    <div id="navbar" class="navbar-text-color sticky-navbar shadow z-50 w-full transition-all duration-500 ease-in-out font-orbitron">
 
         <!-- Top Row: Logo & User -->
         <div class="navbar-astronomy navbar-custom-astronomy-title container mx-auto pl-0 pr-4 lg:pr-8">
-            <div class="flex items-center justify-between navbar-top-section h-16 "> <!-- JUDULNYA -->
-                <!-- Mobile Menu & Logo -->
+            <div class="flex items-center justify-between navbar-top-section h-16 relative"> <!-- JUDULNYA -->
+                <!-- Left: Mobile Menu -->
                 <div class="flex items-center gap-x-6">
                     <div class="lg:hidden">
                         <x-astronomy::navigation-menu-mobile />
                     </div>
-                    <x-astronomy::logo
-                        :headerLogo="$headerLogo"
-                        class="font-bold navbar-logo h-8 w-auto ml-8 lg:ml-[51px]"
+                    <div class="hidden lg:flex items-center gap-x-4">
+                        <x-astronomy::logo
+                            :headerLogo="app()->getSite()->getFirstMedia('logo')?->getAvailableUrl(['thumb', 'thumb-xl'])"
+                            :headerLogoAltText="app()->getSite()->getMeta('name')"
+                            :homeUrl="url('/')"
+                            class="text-white h-8 w-auto"
+                        />
+                    </div>
+                </div>
+
+                <!-- Center: Primary Navigation (moved up, centered) -->
+                <div class="hidden lg:flex absolute left-1/2 -translate-x-1/2">
+                    <x-astronomy::navigation-menu
+                        :items="$primaryNavigationItems"
+                        class="menu-underline flex items-center gap-x-8 text-white hover:text-gray-200 transition-colors duration-200"
                     />
                 </div>
 
-                <!-- User Navigation (only if top_navigation is disabled) -->
+                <!-- Right: User Navigation (only if top_navigation is disabled) -->
                 @if(!App\Facades\Plugin::getPlugin('Astronomy')->getSetting('top_navigation'))
                 <div class="hidden lg:flex justify-end items-center space-x-6 z-10">
                     <x-astronomy::navigation-menu
-                    :items="$userNavigationMenu"
-                    class="flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200 "
+                        :items="$userNavigationMenu"
+                        :avatar="true"
+                        class="menu-underline flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200 "
                     />
                 </div>
                 @endif
             </div>
         </div>
-
-        <!-- Horizontal Separator - Full Width -->
-        <div class="navbar-separator border-t-2 border-blue-100/60 opacity-80 w-full transition-all duration-500 ease-in-out"></div>
-
-        <!-- Bottom Row: Menu Items -->
-        <div class="navbar-astronomy navbar-custom-astronomy container mx-auto px-4 lg:px-8">
-            <div class="hidden lg:flex justify-start navbar-menu-section transition-all duration-500 ease-in-out py-4">
-                <x-astronomy::navigation-menu
-                    :items="$primaryNavigationItems"
-                    class="flex items-center gap-x-8 text-white hover:text-gray-200 transition-colors duration-200"
-                />
-            </div>
-        </div>
-        
-
     </div>
 
     <script>

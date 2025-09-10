@@ -126,11 +126,6 @@ body {
     background-image: none !important;
 }
 
-/* Hide the separator line to avoid light stripe */
-#navbar .navbar-separator {
-    border-color: transparent !important;
-}
-
 .navbar-custom-astronomy a {
     position: relative;
     overflow: visible; /* allow underline to render beyond text if needed */
@@ -163,6 +158,34 @@ body {
 
 .navbar-custom-astronomy a:hover {
     transform: translateY(-2px);
+}
+
+.font-orbitron {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.menu-underline a {
+    position: relative;
+    text-decoration: none;
+}
+
+.menu-underline a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+    height: 2px;
+    width: 0;
+    background-color: currentColor; 
+    transition: width 250ms ease;
+}
+
+.menu-underline a:hover::after,
+.menu-underline a:focus::after {
+    width: 100%;
 }
 
 /* Dropdown menu z-index fix */
