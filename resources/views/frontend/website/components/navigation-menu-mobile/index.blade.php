@@ -9,7 +9,7 @@
         <x-heroicon-o-x-mark class="h-6 w-6" x-show="slideOverOpen" x-cloak />
     </button>
     <template x-teleport="body">
-        <div x-show="slideOverOpen" @@keydown.window.escape="closeSlideOver" class="relative z-[70]">
+        <div x-show="slideOverOpen" @@keydown.window.escape="closeSlideOver" class="relative z-[70] font-orbitron">
             <div x-show="slideOverOpen" x-transition.opacity.duration.600ms @@click="closeSlideOver"
                 class="fixed inset-0 backdrop-blur-[2px]"></div>
             <div class="fixed inset-0 overflow-hidden">
@@ -93,7 +93,10 @@
                                                             'text-primary font-bold' => request()->url() === $item->getUrl(),
                                                             'text-slate-900 font-bold' => request()->url() !== $item->getUrl(),
                                                         ]) :href="$item->getUrl()">
-                                                            {{ $item->getLabel() }}
+                                                            <span class="flex items-center gap-2">
+                                                                <x-heroicon-o-user-circle class="h-5 w-5" />
+                                                                <span>{{ $item->getLabel() }}</span>
+                                                            </span>
                                                         </x-website::link>
                                                     </li>
                                                 @else
@@ -103,7 +106,10 @@
                                                             @@click="open = !open"
                                                             class="hover:bg-base-content/10 py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex items-center justify-between text-slate-900 font-bold"
                                                         >
-                                                            <span>{{ $item->getLabel() }}</span>
+                                                            <span class="flex items-center gap-2">
+                                                                <x-heroicon-o-user-circle class="h-5 w-5" />
+                                                                <span>{{ $item->getLabel() }}</span>
+                                                            </span>
                                                             <svg :class="{ '-rotate-180': open }"
                                                                 class="transition relative top-[1px] ml-1 h-3 w-3" xmlns="http://www.w3.org/2000/svg"
                                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
