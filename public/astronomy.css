@@ -1567,6 +1567,20 @@ body {
     color: #BFD3E6;
 }
 
+/* Mobile-specific longer duration for touch feedback */
+@media (max-width: 810px) {
+    .cta-link {
+        transition: all 0.4s ease-out;
+    }
+    
+    .cta-link:active,
+    .cta-link:focus {
+        background-color: oklch(var(--p));
+        color: #BFD3E6;
+        transition: all 0.4s ease-out;
+    }
+}
+
 /* Title underline and card pointer */
 .news-card .card-title:hover { text-decoration: underline; text-underline-offset: 2px; }
 
