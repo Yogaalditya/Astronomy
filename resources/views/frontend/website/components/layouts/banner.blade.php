@@ -28,7 +28,7 @@
 
 <section 
     id="{{ $bannerId }}" 
-    class="hero-banner relative w-full -mt-[142px] flex items-center justify-center text-white mb-[260px] md:mb-[260px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
+    class="hero-banner relative w-full -mt-[142px] flex items-center justify-center text-white mb-[260px] md:mb-[270px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
     style="
         height: {{ $bannerHeight }};
         @if($bannerUrl)
@@ -40,7 +40,7 @@
         @endif
     "
 >
-    <div class="relative mx-auto px-4 z-10 w-full max-w-[1155px]">
+    <div class="relative mx-auto px-4 z-10 w-full max-w-[1200px]">
         <div class="text-left max-w-4xl">
             <div class="w-full">
                 <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl color-latest">{{ $currentScheduledConference->title }}</h1>
@@ -102,7 +102,7 @@
         </div>
         <div class="countdown-section absolute left-0 right-0 -bottom-52 md:-bottom-56 z-20">
 
-          <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1155px] h-auto">
+          <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1200px] h-auto">
 
             <div class="flex flex-col md:flex-row items-center h-full">
               
