@@ -74,8 +74,7 @@
                                             "
                                             src="{{ $sponsor->getFirstMediaUrl('logo') }}"
                                             alt="{{ $sponsor->name }}"
-                                            loading="lazy"
-                                            class="mx-auto" />
+                                            loading="lazy" />
                                     </div>
                                 </{{ $tag }}>
                             </li>
@@ -107,6 +106,16 @@
                     pagination: false,
                     autoScroll: {
                         speed: 1,
+                    },
+                    breakpoints: {
+                        768: {
+                            perPage: 3,
+                            gap: '0.5rem',
+                        },
+                        480: {
+                            perPage: 2,
+                            gap: '0.75rem',
+                        },
                     },
                 }).mount(window.splide.Extensions);
             });

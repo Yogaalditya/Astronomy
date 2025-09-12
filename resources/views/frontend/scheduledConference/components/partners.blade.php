@@ -29,7 +29,7 @@
                         @foreach ($partnersWithLogos as $partner)
                             @php $tag = $partner->getMeta('url') ? 'a' : 'div'; @endphp
 
-                            <li class="splide__slide flex items-center justify-center p-8">
+                            <li class="splide__slide flex items-center justify-center p-4">
                                 <{{$tag}}
                                     @if($partner->getMeta('url'))
                                     href="{{ $partner->getMeta('url') }}"
@@ -75,6 +75,16 @@
                     pagination: false,
                     autoScroll: {
                         speed: 1,
+                    },
+                    breakpoints: {
+                        768: {
+                            perPage: 3,
+                            gap: '0.5rem',
+                        },
+                        480: {
+                            perPage: 2,
+                            gap: '0.5rem',
+                        },
                     },
                 }).mount(window.splide.Extensions);
             });
