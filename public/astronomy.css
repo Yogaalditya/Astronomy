@@ -1954,7 +1954,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    justify-content: center;           /* center 1–3 cards and last row */
+    justify-content: flex-start;       /* left-align cards, including last row */
   }
 
   .ny2026-cards--grid .ny2026-card {
