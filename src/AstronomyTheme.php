@@ -83,7 +83,6 @@ class AstronomyTheme extends Theme
 						->label('Latest News')
 						->icon('heroicon-o-newspaper')
 						->maxItems(1),
-					// New layout template 1 block
 					Builder\Block::make('layout-template-1')
 						->label('Layout Template 1')
 						->icon('heroicon-o-rectangle-stack')
@@ -107,7 +106,7 @@ class AstronomyTheme extends Theme
 								->columns(1),
 						]),
 					Builder\Block::make('layout-template-2')
-							->label('Layout Template 2 (Hero)')
+							->label('Layout Template 2')
 							->icon('heroicon-o-rectangle-group')
 							->schema([
 								TextInput::make('title')

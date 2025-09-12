@@ -1,8 +1,13 @@
 @php
     $images = $currentScheduledConference->getMedia('astronomy-header');
     $bannerImage = $images->first();
+
+    // Default banner from theme's public directory
+    // Place your image at: plugins/Astronomy/public/images/default-banner.jpg
+    $defaultBannerUrl = $theme->url('images/default-banner.jpg');
+
     $bannerUrl = '';
-    
+
     if ($bannerImage) {
         // Use original image for better quality, fallback to smaller sizes
         $bannerUrl = $bannerImage->getUrl() ?: 
@@ -14,6 +19,11 @@
             $bannerUrl = asset($bannerUrl);
         }
     }
+
+    // Fallback to default if no uploaded banner
+    if (!$bannerUrl) {
+        $bannerUrl = $defaultBannerUrl;
+    }
     
     // Debug info (remove after testing)
     //dd('Images count: ' . $images->count() . ', Banner URL: ' . $bannerUrl . ', Image exists: ' . ($bannerImage ? 'Yes' : 'No'));
@@ -23,7 +33,9 @@
 
     $imagess = $currentScheduledConference->getMedia('astronomy-countdown')->first();
     $imagecountdown = $imagess ? $imagess->getAvailableUrl(['thumb', 'thumb-xl']) : null;
-    $bannerHeight = $theme->getSetting('banner_height') ?? '790px';
+    $bannerHeight = $theme->getSetting('banner_height') ?? '800px';
+    // Shared color class for title, dates, and location
+    $accentTextClass = $theme->getSetting('appearance_color') ? 'color-latest' : 'text-[#BFD3E6]';
 @endphp
 
 <section 
@@ -43,7 +55,7 @@
     <div class="relative mx-auto px-4 z-10 w-full max-w-[1200px]">
         <div class="text-left max-w-4xl">
             <div class="w-full">
-                <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl color-latest">{{ $currentScheduledConference->title }}</h1>
+                <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl {{ $accentTextClass }}">{{ $currentScheduledConference->title }}</h1>
                 @if($theme->getSetting('description'))
                     <p class="text-[17px] mb-8" style="color: {{ $theme->getSetting('description_color') }}"> {!! nl2br(e($theme->getSetting('description'))) !!}</p>    
                 @endif
@@ -58,10 +70,10 @@
                             <div class="text-left">
                                 @if($currentScheduledConference->date_start)
                                     @if($currentScheduledConference->date_end && $currentScheduledConference->date_start->format(Setting::get('format_date')) !== $currentScheduledConference->date_end->format(Setting::get('format_date')))
-                                        <span class="font-semibold color-latest text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
-                                        <span class="font-semibold color-latest text-xl"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold {{ $accentTextClass }} text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold {{ $accentTextClass }} text-xl"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
                                     @else
-                                        <span class="font-semibold color-latest text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold {{ $accentTextClass }} text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                     @endif
                                 @endif
                                 <div class="text-base text-white mt-1">Conference Dates</div>
@@ -77,7 +89,7 @@
                             </svg>
                         </span>
                         <div class="text-left">
-                            <span class="font-semibold color-latest text-xl">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
+                            <span class="font-semibold {{ $accentTextClass }} text-xl">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
                             <div class="text-base text-white mt-1">Conference Venue</div>
                         </div>
                     </div>
@@ -105,13 +117,6 @@
           <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1200px] h-auto">
 
             <div class="flex flex-col md:flex-row items-center h-full">
-              
-              <!-- Header -->
-              <div class="bg-custom-color px-6 py-4 md:py-0 self-stretch flex items-center justify-center md:justify-start w-full md:w-auto rounded-l-3xl md:rounded-l-3xl md:rounded-r-none">
-                <span class="font-extrabold text-lg md:text-xl leading-tight text-gradient text-center md:text-left">
-                  Our Event <br class="hidden md:block"> Program Starts In :
-                </span>
-              </div>
 
               <!-- Countdown -->
               <div class="countdown-container flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 h-full">

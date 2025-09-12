@@ -45,7 +45,13 @@
       <div class="ny2026-hero__actions">
         @foreach($buttons as $btn)
             @php
-                $style = ($btn['style'] ?? 'primary') === 'outline' ? 'ny2026-btn--outline' : 'ny2026-btn--primary';
+                $buttonStyle = $btn['style'] ?? 'primary';
+
+                $style = 'ny2026-btn--primary';
+                if ($buttonStyle === 'outline') {
+                    $style = 'ny2026-btn--outline';
+                }
+
                 $bgColor = $btn['background_color'] ?? null;
                 $textColor = $btn['text_color'] ?? null;
             @endphp

@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <!-- Bottom Row: Menu Items -->
+    <!--Menu Items -->
     @if(App\Models\Conference::exists())
     <div class="container mx-auto px-4 lg:px-8 py-3">
         <div class="flex justify-start">
@@ -55,7 +55,7 @@
                             :headerLogo="app()->getSite()->getFirstMedia('logo')?->getAvailableUrl(['thumb', 'thumb-xl'])"
                             :headerLogoAltText="app()->getSite()->getMeta('name')"
                             :homeUrl="url('/')"
-                            class="text-white h-8 w-auto"
+                            class="text-[#BFD3E6] h-8 w-auto"
                         />
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                 <div class="hidden lg:flex absolute left-1/2 -translate-x-1/2">
                     <x-astronomy::navigation-menu
                         :items="$primaryNavigationItems"
-                        class="menu-underline flex items-center gap-x-8 text-white hover:text-gray-200 transition-colors duration-200"
+                        class="menu-underline flex items-center gap-x-8 text-[#BFD3E6] hover:text-gray-200 transition-colors duration-200"
                     />
                 </div>
 
@@ -74,7 +74,7 @@
                     <x-astronomy::navigation-menu
                         :items="$userNavigationMenu"
                         :avatar="true"
-                        class="menu-underline flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200 "
+                        class="menu-underline flex items-center gap-x-6 text-[#BFD3E6] hover:text-gray-200 transition-colors duration-200 "
                     />
                 </div>
                 @endif
