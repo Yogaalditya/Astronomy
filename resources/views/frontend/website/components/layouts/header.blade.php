@@ -52,7 +52,7 @@
                     </div>
                     <div class="hidden lg:flex items-center gap-x-4">
                         <x-astronomy::logo
-                            :headerLogo="app()->getSite()->getFirstMedia('logo')?->getAvailableUrl(['thumb', 'thumb-xl'])"
+                            :headerLogo="$headerLogo"
                             :headerLogoAltText="app()->getSite()->getMeta('name')"
                             :homeUrl="url('/')"
                             class="text-[#BFD3E6] h-8 w-auto"

@@ -3,6 +3,11 @@
     'avatar' => false, // if true, render top-level items as avatar icon instead of label
 ])
 
+@php
+    $displayedItems = collect($items)->filter(fn($item) => $item->isDisplayed());
+    $isFirstDisplayedItem = true;
+@endphp
+
 <nav {{ $attributes->merge(['class' => 'relative']) }}>
     <ul class="navbar-items flex items-center justify-center flex-1 p-1 space-x-1 list-none group">
         @foreach ($items as $key => $item)
@@ -16,7 +21,7 @@
                         class="inline-flex items-center justify-center px-4 transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 ease-out duration-300 font-bold"
                         :href="$item->getUrl()"
                         >
-                        @if(!$avatar)
+                        @if(!$avatar || !$isFirstDisplayedItem)
                             <span>{{ $item->getLabel() }}</span>
                         @else
                             <span class="sr-only">{{ $item->getLabel() }}</span>
@@ -24,6 +29,7 @@
                         @endif
                     </x-astronomy::link>
                 </li>
+                @php $isFirstDisplayedItem = false; @endphp
             @else
                 <li x-data="{ open: false }" 
                     x-on:mouseover="open = true" x-on:mouseleave="open = false"
@@ -34,7 +40,7 @@
                         @@click="open = !open"
                         class="inline-flex items-center justify-center  transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 ease-out duration-300 font-bold"
                         >
-                        @if(!$avatar)
+                        @if(!$avatar || !$isFirstDisplayedItem)
                             <span>{{ $item->getLabel() }}</span>
                         @else
                             <span class="sr-only">{{ $item->getLabel() }}</span>
@@ -62,6 +68,7 @@
                             
                     </div>
                 </li>
+                @php $isFirstDisplayedItem = false; @endphp
             @endif
         @endforeach
     </ul>
