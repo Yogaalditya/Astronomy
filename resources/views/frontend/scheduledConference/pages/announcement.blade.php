@@ -4,21 +4,23 @@
             <x-astronomy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
       
-            <div class="p-3 space-y-4">
+            <div class="p-3 space-y-6">
                 <header class="space-y-2">
-                    <h1 class="text-3xl font-extrabold text-gray-900 ">{{ $announcement->title }}</h1>
+                    <h1 class="text-3xl font-extrabold text-gray-900 text-center">{{ $announcement->title }}</h1>
                 </header>
 
-                @if ($announcement->hasMedia('featured_image'))
-                    <div class="relative h-64 overflow-hidden rounded-lg">
-                        <img class="object-cover w-full h-full"
-                            src="{{ $announcement->getFirstMedia('featured_image')->getAvailableUrl(['thumb']) }}"
-                            alt="{{ $announcement->title }}">
-                    </div>
-                @endif
+                <div class="max-w-3xl mx-auto space-y-4">
+                    @if ($announcement->hasMedia('featured_image'))
+                        <div class="overflow-hidden rounded-lg">
+                            <img class="mx-auto w-full h-auto object-contain"
+                                src="{{ $announcement->getFirstMedia('featured_image')->getAvailableUrl(['thumb']) }}"
+                                alt="{{ $announcement->title }}">
+                        </div>
+                    @endif
 
-                <div class="prose  max-w-none text-black">
-                    {{ new Illuminate\Support\HtmlString($this->announcement->getMeta('content')) }}
+                    <div class="prose max-w-none text-justify hyphens-auto break-words text-black" lang="{{ app()->getLocale() }}">
+                        {{ new Illuminate\Support\HtmlString($this->announcement->getMeta('content')) }}
+                    </div>
                 </div>
             </div>
        
