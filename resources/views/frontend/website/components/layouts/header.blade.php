@@ -1,6 +1,16 @@
 @php
     $primaryNavigationItems = app()->getNavigationItems('primary-navigation-menu');
     $userNavigationMenu = app()->getNavigationItems('user-navigation-menu');
+
+    // Determine whether current page is the "home" of the active context
+    $isHome = false;
+    if ($scheduledConference = app()->getCurrentScheduledConference()) {
+        // Scheduled conference homepage
+        $isHome = url()->current() === $scheduledConference->getHomeUrl();
+    }else {
+        // Fallback to site root if no conference context is active
+        $isHome = url()->current() === url('/');
+    }
 @endphp
 
 <!-- Top Navigation Bar -->
@@ -40,7 +50,7 @@
 @endif
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
-    <div id="navbar" class="navbar-text-color sticky-navbar shadow z-50 w-full transition-all duration-500 ease-in-out font-orbitron">
+    <div id="navbar" class="navbar-text-color sticky-navbar shadow z-50 w-full transition-all duration-500 ease-in-out font-orbitron {{ $isHome ? 'navbar-transparent' : 'navbar-gradient' }}">
 
         <!-- Top Row: Logo & User -->
         <div class="navbar-astronomy navbar-custom-astronomy-title container mx-auto pl-0 pr-4 lg:pr-8">
