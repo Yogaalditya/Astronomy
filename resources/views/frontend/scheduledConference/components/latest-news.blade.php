@@ -22,7 +22,6 @@
 						->orWhereNull('expires_at');
 				})
 				->orderBy('created_at', 'DESC')
-				->take(3)
 				->get() as $announcement)
 				
 					@php
