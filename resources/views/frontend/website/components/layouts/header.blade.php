@@ -23,7 +23,7 @@
             <x-astronomy::navigation-menu
             :items="$userNavigationMenu"
             :avatar="true"
-            class="menu-underline flex items-center gap-x-6 text-white hover:text-gray-200 transition-colors duration-200"
+            class="menu-underline flex items-center gap-x-6 text-white hover:text-[#BFD3E6] transition-colors duration-200"
             />
         </div>
     </div>
@@ -64,7 +64,7 @@
                 <div class="hidden lg:flex absolute left-1/2 -translate-x-1/2">
                     <x-astronomy::navigation-menu
                         :items="$primaryNavigationItems"
-                        class="menu-underline flex items-center gap-x-8 text-[#BFD3E6] hover:text-gray-200 transition-colors duration-200"
+                        class="menu-underline flex items-center gap-x-8 text-[#BFD3E6] hover:text-[#BFD3E6] transition-colors duration-200"
                     />
                 </div>
 
@@ -74,7 +74,7 @@
                     <x-astronomy::navigation-menu
                         :items="$userNavigationMenu"
                         :avatar="true"
-                        class="menu-underline flex items-center gap-x-6 text-[#BFD3E6] hover:text-gray-200 transition-colors duration-200 "
+                        class="menu-underline flex items-center gap-x-6 text-[#BFD3E6] hover:text-[#BFD3E6] transition-colors duration-200 "
                     />
                 </div>
                 @endif
