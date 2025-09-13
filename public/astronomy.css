@@ -1453,7 +1453,7 @@ body {
     width: 100%;
     position: relative;
     border-radius: 8px;
-    margin: 0 auto;
+    margin: 0; /* let the flex gap control spacing */
     display: flex;
     flex-direction: column;
 }
@@ -1463,14 +1463,59 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
-
-/* Ensure equal height cards in grid */
-.latest-news .grid {
-    align-items: stretch;
+/* align section paddings with ny2026 rhythm */
+.latest-news.section-background {
+  padding-top: 3rem !important; /* override py-24 */
+  padding-bottom: 3rem !important;
+}
+@media (min-width: 768px) {
+  .latest-news.section-background {
+    padding-top: 3.5rem !important; /* ~md:py-14 */
+    padding-bottom: 3.5rem !important;
+  }
 }
 
-.latest-news .grid > article {
-    height: 100%;
+/* Latest News layout: center rows, max 3 per line, responsive */
+.latest-news .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center when fewer than max columns */
+    gap: 1.5rem; /* align with ny2026 gap (24px) for consistency */
+    align-items: stretch; /* keep equal heights */
+}
+
+/* Large screens: 3 columns like lg:grid-cols-3 with gap-8 */
+@media (min-width: 1024px) {
+  .latest-news .grid > article {
+    /* column width = (container - 2 gaps)/3 */
+    flex: 0 0 calc((100% - (2 * 1.5rem)) / 3);
+    max-width: calc((100% - (2 * 1.5rem)) / 3);
+  }
+}
+
+/* Medium screens: 2 columns like md:grid-cols-2 with gap-8 */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .latest-news .grid {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .latest-news .grid > article {
+    /* column width = (container - 1 gap)/2 */
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+    max-width: calc((100% - 1.5rem) / 2);
+  }
+}
+
+/* Mobile: single column and centered */
+@media (max-width: 767.98px) {
+  .latest-news .grid {
+    justify-content: center;
+    gap: 1.5rem; /* match ny2026 gap */
+  }
+  .latest-news .grid > article {
+    flex: 0 1 100%;
+    max-width: 100%; /* full-width on mobile like ny2026 */
+  }
 }
 
 
