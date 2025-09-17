@@ -83,7 +83,7 @@
                         },
                         480: {
                             perPage: 2,
-                            gap: '0.5rem',
+                            gap: '1rem',
                         },
                     },
                 }).mount(window.splide.Extensions);
