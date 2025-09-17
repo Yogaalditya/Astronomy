@@ -92,12 +92,6 @@ body {
     font-family: "Inter Tight", sans-serif;
 }
 
-.navbar-container {
-    background: transparent !important;
-    backdrop-filter: none;
-    position: sticky;
-}
-
 /* Make top publisher bar transparent */
 .navbar-publisher {
     background: transparent !important;
@@ -229,43 +223,14 @@ body {
     #navbar .navbar-logo div.relative { height: 2.25rem; }
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .navbar-minimized {
-        height: auto;
-        min-height: 3.5rem;
-    }
-    
-    .navbar-minimized .navbar-top-section {
-        height: auto !important;
-        min-height: 3.5rem !important;
-    }
-    
-    .navbar-minimized .navbar-logo {
-        height: 1.75rem !important;
-    }
-    
-
-}
-
 /* ======= DROPDOWN MENU FIXES ======= */
 .navbar-dropdown-content {
     z-index: 999999 !important;
     position: fixed !important;
 }
 
-/* Pastikan dropdown menu selalu terlihat bahkan saat navbar minimized */
-.navbar-minimized .navbar-dropdown-content {
-    z-index: 999999 !important;
-    position: fixed !important;
-}
-
 /* Pastikan parent container tidak memotong dropdown */
 .navbar-items {
-    overflow: visible !important;
-}
-
-.navbar-minimized .navbar-items {
     overflow: visible !important;
 }
 
@@ -280,13 +245,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-
-/* Adjusting logo and menu positioning */
-.logo-conference {
-    margin-left: -200px;
-    margin-right: 140px;
 }
 
 /* Adjusted styles for headings and dividers */
@@ -315,14 +273,6 @@ body {
     }
 }
 
-.conference-sponsor {
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-.conference-sponsor:hover .conference-sponsor-logo {
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-}
-
 @keyframes fadeInPartner {
     from {
         opacity: 0;
@@ -333,14 +283,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.conference-partner {
-    animation: fadeInPartner 0.5s ease-out forwards;
-}
-
-.conference-partner:hover .conference-partner-logo {
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 /* Additional effects for conference logos */
