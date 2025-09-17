@@ -2006,7 +2006,12 @@ body {
   line-height: 1.7;
 }
 
-.ny2026-hero__actions { display: flex; gap: .75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.ny2026-hero__actions { 
+    display: flex; 
+    gap: .75rem; 
+    margin-top: 1.5rem; 
+    flex-wrap: wrap; 
+}
 
 .ny2026-btn {
   display: inline-flex;
@@ -2025,21 +2030,29 @@ body {
   color: #BFD3E6 !important;
   box-shadow: 0 4px 10px rgba(0,0,0,.25);
 }
-.ny2026-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,.25); }
+.ny2026-btn--primary:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 16px rgba(0,0,0,.25); 
+}
 
 .ny2026-btn--outline {
   background: transparent;
   color: #BFD3E6 !important;
   border: 2px solid oklch(var(--p));
 }
-.ny2026-btn--outline:hover { background: oklch(var(--p)); color: #fff; }
+.ny2026-btn--outline:hover { 
+    background: oklch(var(--p)); 
+    color: #fff; 
+}
 
 .ny2026-btn--ghost {
   background: transparent;
   color: #BFD3E6 !important;
   border: 1px solid rgba(191, 211, 230, .35);
 }
-.ny2026-btn--ghost:hover { background: rgba(191, 211, 230, .1); }
+.ny2026-btn--ghost:hover { 
+    background: rgba(191, 211, 230, .1); 
+}
 
 /* Section base */
 .ny2026-section__title {
@@ -2063,25 +2076,78 @@ body {
   border-radius: 2px;
 }
 
-.ny2026-section__lead { color: #475569; margin-top: .75rem; }
+.ny2026-section__lead { 
+    color: #475569; 
+    margin-top: .75rem; 
+}
 
 /* About */
-.ny2026-about { background: #F5F5F5; padding: 4rem 0; }
-.ny2026-about__grid { display: grid; gap: 2rem; align-items: center; }
-@media (min-width: 900px) { .ny2026-about__grid { grid-template-columns: 1.1fr 1fr; gap: 3rem; } }
+.ny2026-about { 
+    background: #F5F5F5; 
+    padding: 4rem 0; 
+}
 
-.ny2026-about__text p { line-height: 1.8; color: #4b5563; }
+.ny2026-about__grid { 
+    display: grid; 
+    gap: 2rem; 
+    align-items: center; 
+}
 
-.ny2026-list { margin: 1rem 0 0; padding: 0; list-style: none; }
-.ny2026-list--check li { position: relative; padding-left: 28px; margin-bottom: .75rem; color: #475569; }
-.ny2026-list--check li::before { content: '→'; position: absolute; left: 0; color: oklch(var(--p)); font-weight: 700; }
+@media (min-width: 900px) { 
+    .ny2026-about__grid { 
+        grid-template-columns: 1.1fr 1fr; 
+        gap: 3rem; 
+    } 
+}
 
-.ny2026-image { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,.1); }
+.ny2026-about__text p { 
+    line-height: 1.8; 
+    color: #4b5563; 
+}
+
+.ny2026-list { 
+    margin: 1rem 0 0; 
+    padding: 0; 
+    list-style: none; 
+}
+
+.ny2026-list--check li { 
+    position: relative; 
+    padding-left: 28px; 
+    margin-bottom: .75rem; 
+    color: #475569; 
+}
+
+.ny2026-list--check li::before { 
+    content: '→'; 
+    position: absolute; 
+    left: 0; 
+    color: oklch(var(--p)); 
+    font-weight: 700; 
+}
+
+.ny2026-image { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 16px rgba(0,0,0,.1); 
+}
 
 /* Goals */
-.ny2026-goals { padding: 4rem 0; }
-.ny2026-cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-@media (min-width: 720px) { .ny2026-cards { grid-template-columns: repeat(3, 1fr); } }
+.ny2026-goals { 
+    padding: 4rem 0; 
+}
+.ny2026-cards { 
+    display: grid; 
+    gap: 1rem; 
+    grid-template-columns: 1fr; 
+}
+
+@media (min-width: 720px) { 
+    .ny2026-cards { 
+        grid-template-columns: repeat(3, 1fr); 
+    } 
+}
 
 .ny2026-card {
   background: #ffffff;
@@ -2091,10 +2157,22 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,.06);
   transition: transform .2s ease, box-shadow .2s ease;
 }
-.ny2026-card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,.08); }
-.ny2026-card__title { font-weight: 600; color: #1f2937; margin-bottom: .25rem; }
-.ny2026-card__text { color: #4b5563; line-height: 1.7; }
-.ny2026-card--benefit { border-top: 3px solid oklch(var(--p)); }
+.ny2026-card:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 16px rgba(0,0,0,.08); 
+}
+.ny2026-card__title { 
+    font-weight: 600; 
+    color: #1f2937; 
+    margin-bottom: .25rem; 
+}
+.ny2026-card__text { 
+    color: #4b5563; 
+    line-height: 1.7; 
+}
+.ny2026-card--benefit { 
+    border-top: 3px solid oklch(var(--p)); 
+}
 
 /* Simple, scalable card grid: works for any number of cards */
 @media (min-width: 1024px) {
