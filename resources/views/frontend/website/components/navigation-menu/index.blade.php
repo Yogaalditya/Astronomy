@@ -18,14 +18,14 @@
             @if ($item->children->isEmpty())
                 <li>
                     <x-astronomy::link
-                        class="inline-flex items-center justify-center px-4 transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 ease-out duration-300 font-bold"
+                        class="inline-flex items-center justify-center px-4 h-8 leading-none transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 ease-out duration-300 font-bold"
                         :href="$item->getUrl()"
                         >
                         @if(!$avatar || !$isFirstDisplayedItem)
-                            <span>{{ $item->getLabel() }}</span>
+                            <span class="leading-none">{{ $item->getLabel() }}</span>
                         @else
                             <span class="sr-only">{{ $item->getLabel() }}</span>
-                            <x-heroicon-o-user-circle class="h-6 w-6" />
+                            <x-heroicon-o-user-circle class="h-6 w-6 self-center" />
                         @endif
                     </x-astronomy::link>
                 </li>
@@ -38,15 +38,15 @@
                     <button 
                         x-ref="button"
                         @@click="open = !open"
-                        class="inline-flex items-center justify-center  transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 ease-out duration-300 font-bold"
+                        class="inline-flex items-center justify-center h-8 leading-none transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-1 ease-out duration-300 font-bold"
                         >
                         @if(!$avatar || !$isFirstDisplayedItem)
-                            <span>{{ $item->getLabel() }}</span>
+                            <span class="leading-none">{{ $item->getLabel() }}</span>
                         @else
                             <span class="sr-only">{{ $item->getLabel() }}</span>
-                            <x-heroicon-o-user-circle class="h-6 w-6" />
+                            <x-heroicon-o-user-circle class="h-6 w-6 self-center" />
                         @endif
-                        <x-heroicon-m-chevron-down class="transition relative top-[1px] ml-1 h-3 w-3" x-bind:class="{ '-rotate-180': open}" />
+                        <x-heroicon-m-chevron-down class="transition h-3 w-3 self-center" x-bind:class="{ '-rotate-180': open}" />
                     </button>
                     <div 
                         x-show="open"
