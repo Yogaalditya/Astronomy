@@ -83,17 +83,6 @@
                 </div>
             </div>
         </div>
-
-        <style>
-            .splide__pagination__page {
-                background: #ccc;
-            }
-
-            .splide__pagination__page.is-active {
-                background: #022f73;
-            }
-        </style>
-
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 new Splide('#sponsorsSlider', {
