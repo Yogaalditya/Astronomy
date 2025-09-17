@@ -7,9 +7,9 @@
 					<div class="flex flex-col items-center">
 						<h3 class="text-4xl font-bold text-gray-800 mb-16 text-center">{{ $role->name }}
 						</h3>
-						<div class="flex flex-wrap justify-center" style="gap: 75px;">
+						<div class="astronomy-speakers-grid">
 							@foreach ($role->speakers as $speaker)
-								<div class="flex flex-col items-center text-center max-w-xs">
+								<div class="astronomy-speaker-card">
 									<!-- Foto bulat dengan overlay -->
 									<div class="speaker-image-container relative h-56 w-56 rounded-full overflow-hidden group mb-0 border-4 border-gray-200">
 										@if($speaker->getFilamentAvatarUrl())
@@ -37,13 +37,13 @@
 									</div>
 									
 									<!-- Card untuk nama dan info -->
-									<div class="bg-white rounded-3xl shadow-lg border border-gray-200 w-[115%] -mt-14 relative z-10">
-										<h4 class="text-2xl font-bold text-gray-900 mt-4 break-words px-4">
+									<div class="astronomy-speaker-info-card bg-white rounded-3xl shadow-lg border border-gray-200 w-[115%] -mt-14 relative z-10">
+										<h4 class="astronomy-speaker-name text-2xl font-bold text-gray-900 mt-4 break-words word-wrap overflow-wrap">
 											{{ $speaker->fullName }}
 										</h4>
 
 										@if ($speaker->getMeta('affiliation'))
-											<p class="text-lg color-latest font-medium mb-4 break-words px-4">
+											<p class="astronomy-speaker-affiliation text-lg color-latest font-medium mb-4 break-words word-wrap overflow-wrap">
 												{{ $speaker->getMeta('affiliation') }}
 											</p>
 										@endif
