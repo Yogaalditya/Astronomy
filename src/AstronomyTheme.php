@@ -106,34 +106,106 @@ class AstronomyTheme extends Theme
 								->columns(1),
 						]),
 					Builder\Block::make('layout-template-2')
-							->label('Layout Template 2')
-							->icon('heroicon-o-rectangle-group')
-							->schema([
-								TextInput::make('title')
-									->label('Title')
-									->required(),
-								Textarea::make('description')
-									->label('Description')
-									->rows(3),
-								SpatieMediaLibraryFileUpload::make('background_image')
-									->collection('astronomy-hero')
-									->label('Background Image')
-									->image()
-									->maxFiles(1),
-								Repeater::make('buttons')
-									->label('Buttons')
-									->schema([
-										TextInput::make('text')->label('Text')->required(),
-										TextInput::make('url')->label('URL')->required()->url(),
-										Select::make('style')->label('Style')->options([
-											'primary' => 'Primary',
-											'outline' => 'Outline',
-										])->default('primary'),
-									])
-									->columns(2)
-									->minItems(0),
-							]),
-						Builder\Block::make('layouts')
+						->label('Layout Template 2')
+						->icon('heroicon-o-rectangle-group')
+						->schema([
+							TextInput::make('title')
+								->label('Title')
+								->required(),
+							Textarea::make('description')
+								->label('Description')
+								->rows(3),
+							SpatieMediaLibraryFileUpload::make('background_image')
+								->collection('astronomy-hero')
+								->label('Background Image')
+								->image()
+								->maxFiles(1),
+							Repeater::make('buttons')
+								->label('Buttons')
+								->schema([
+									TextInput::make('text')->label('Text')->required(),
+									TextInput::make('url')->label('URL')->required()->url(),
+									Select::make('style')->label('Style')->options([
+										'primary' => 'Primary',
+										'outline' => 'Outline',
+									])->default('primary'),
+								])
+								->columns(2)
+								->minItems(0),
+						]),
+					Builder\Block::make('layout-template-3')
+						->label('Layout Template 3')
+						->icon('heroicon-o-rectangle-group')
+						->schema([
+							Grid::make(2)
+								->schema([
+									Grid::make()
+										->schema([
+											Select::make('left.type')
+												->label('Left Column Type')
+												->options([
+													'image' => 'Image',
+													'description' => 'Description',
+												])
+												->reactive()
+												->required(),
+											SpatieMediaLibraryFileUpload::make('left.image')
+												->collection('astronomy-about-left')
+												->label('Left Image')
+												->image()
+												->maxFiles(1)
+												->visible(fn ($get) => $get('left.type') === 'image'),
+											TextInput::make('left.title')
+												->label('Left Title')
+												->visible(fn ($get) => $get('left.type') === 'description'),
+											Textarea::make('left.description')
+												->label('Left Description')
+												->rows(3)
+												->visible(fn ($get) => $get('left.type') === 'description'),
+											Repeater::make('left.points')
+												->label('Left Points')
+												->schema([
+													TextInput::make('text')->label('Text')->required(),
+												])
+												->minItems(0)
+												->columns(1)
+												->visible(fn ($get) => $get('left.type') === 'description'),
+										]),
+									Grid::make()
+										->schema([
+											Select::make('right.type')
+												->label('Right Column Type')
+												->options([
+													'image' => 'Image',
+													'description' => 'Description',
+												])
+												->reactive()
+												->required(),
+											SpatieMediaLibraryFileUpload::make('right.image')
+												->collection('astronomy-about-right')
+												->label('Right Image')
+												->image()
+												->maxFiles(1)
+												->visible(fn ($get) => $get('right.type') === 'image'),
+											TextInput::make('right.title')
+												->label('Right Title')
+												->visible(fn ($get) => $get('right.type') === 'description'),
+											Textarea::make('right.description')
+												->label('Right Description')
+												->rows(3)
+												->visible(fn ($get) => $get('right.type') === 'description'),
+											Repeater::make('right.points')
+												->label('Right Points')
+												->schema([
+													TextInput::make('text')->label('Text')->required(),
+												])
+												->minItems(0)
+												->columns(1)
+												->visible(fn ($get) => $get('right.type') === 'description'),
+										]),
+								])
+						]),
+					Builder\Block::make('layouts')
 						->label('Custom Content')
 						->icon('heroicon-m-bars-3-bottom-left')
 						->schema([
