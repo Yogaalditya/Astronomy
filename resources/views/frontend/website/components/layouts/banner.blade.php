@@ -25,9 +25,6 @@
         $bannerUrl = $defaultBannerUrl;
     }
     
-    // Debug info (remove after testing)
-    //dd('Images count: ' . $images->count() . ', Banner URL: ' . $bannerUrl . ', Image exists: ' . ($bannerImage ? 'Yes' : 'No'));
-    
     // Create unique ID for this banner
     $bannerId = 'banner-' . uniqid();
 
