@@ -91,24 +91,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const navbar = document.getElementById('navbar');
-        const scrollThreshold = 100;
-
-        function handleScroll() {
-            if (window.scrollY > scrollThreshold) {
-                navbar.classList.add('navbar-minimized');
-            } else {
-                navbar.classList.remove('navbar-minimized');
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        
-        // Initial check
-        handleScroll();
-    });
-    </script>
 @endif
