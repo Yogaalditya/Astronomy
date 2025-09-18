@@ -990,24 +990,6 @@ body {
   }
 }
 
-/* Speaker Image Overlay */
-.speaker-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 1rem;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    text-align: center;
-    transition: .4s ease;
-    align-content: center;
-    justify-content: center;
-}
-
 /* Custom Card Styles */
 .speaker-card {
     width: calc(100% + 20px) !important;

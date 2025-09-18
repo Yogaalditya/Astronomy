@@ -31,9 +31,6 @@
 												</span>
 											</div>
 										@endif
-										<div class="speaker-overlay">
-											<h4 class="text-name text-white text-xl font-bold">{{ $speaker->fullName }}</h4>
-										</div>
 									</div>
 									
 									<!-- Card untuk nama dan info -->
