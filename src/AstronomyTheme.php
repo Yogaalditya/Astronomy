@@ -36,9 +36,7 @@ class AstronomyTheme extends Theme
 	public function getFormSchema(): array
 	{
 		return [
-			Toggle::make('top_navigation')
-				->label('Enable Top Navigation')
-				->default(false),
+
 			Toggle::make('enable_countdown')
 				->label('Enable Countdown on Banner')
 				->default(false),
@@ -267,7 +265,7 @@ class AstronomyTheme extends Theme
 			'layouts' => $this->getSetting('layouts') ?? [] ,
 			'name_content' => $this->getSetting('name_content'),
 			'about' => $this->getSetting('about'),
-			'top_navigation' => $this->getSetting('top_navigation'),
+
 			'enable_countdown' => $this->getSetting('enable_countdown'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
 			'description' => $this->getSetting('description'),

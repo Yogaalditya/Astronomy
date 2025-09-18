@@ -13,41 +13,7 @@
     }
 @endphp
 
-<!-- Top Navigation Bar -->
-@if(App\Facades\Plugin::getPlugin('Astronomy')->getSetting('top_navigation'))
-<div class="navbar-publisher bg-gradient-to-r text-black top-0 w-full font-semibold z-[60] font-orbitron">
-    <!-- Top Row: Logo & User Navigation -->
-    <div class="container mx-auto px-4 lg:px-8 h-16 flex items-center justify-between">
-        <!-- Logo Section -->
-        <div class="flex items-center gap-x-4">
-            <x-astronomy::logo
-                :headerLogo="app()->getSite()->getFirstMedia('logo')?->getAvailableUrl(['thumb', 'thumb-xl'])"
-                :headerLogoAltText="app()->getSite()->getMeta('name')"
-                :homeUrl="url('/')"
-                class="text-black h-8 w-auto"
-            />
-        </div>
 
-        <!-- User Navigation -->
-        <div class="hidden lg:flex items-center gap-x-6">
-            <x-astronomy::navigation-menu
-            :items="$userNavigationMenu"
-            :avatar="true"
-            class="menu-underline flex items-center gap-x-6 text-white hover:text-[#BFD3E6] transition-colors duration-200"
-            />
-        </div>
-    </div>
-
-    <!--Menu Items -->
-    @if(App\Models\Conference::exists())
-    <div class="container mx-auto px-4 lg:px-8 py-3">
-        <div class="flex justify-start">
-            @livewire(App\Livewire\GlobalNavigation::class)
-        </div>
-    </div>
-    @endif
-</div>
-@endif
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
     <div id="navbar" class="navbar-text-color sticky-navbar shadow z-50 w-full transition-all duration-500 ease-in-out font-orbitron {{ $isHome ? 'navbar-transparent' : 'navbar-gradient' }}">
@@ -78,8 +44,7 @@
                     />
                 </div>
 
-                <!-- Right: User Navigation (only if top_navigation is disabled) -->
-                @if(!App\Facades\Plugin::getPlugin('Astronomy')->getSetting('top_navigation'))
+                <!-- Right: User Navigation -->
                 <div class="hidden lg:flex justify-end items-center space-x-6 z-10">
                     <x-astronomy::navigation-menu
                         :items="$userNavigationMenu"
@@ -87,7 +52,6 @@
                         class="menu-underline flex items-center gap-x-6 text-[#BFD3E6] hover:text-[#BFD3E6] transition-colors duration-200 "
                     />
                 </div>
-                @endif
             </div>
         </div>
     </div>
