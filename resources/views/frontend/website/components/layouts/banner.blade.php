@@ -52,15 +52,19 @@
     <div class="relative mx-auto px-4 z-10 w-full max-w-[1200px]">
         <div class="text-left max-w-4xl">
             <div class="w-full">
-                <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight mb-8 drop-shadow-2xl {{ $accentTextClass }}">{{ $currentScheduledConference->title }}</h1>
-                @if($theme->getSetting('description'))
-                    <p class="text-[17px] mb-8" style="color: {{ $theme->getSetting('description_color') }}"> {!! nl2br(e($theme->getSetting('description'))) !!}</p>    
-                @endif
+                <div class="min-h-[120px] mb-8">
+                    <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight drop-shadow-2xl {{ $accentTextClass }} title-line">{{ $currentScheduledConference->title }}</h1>
+                </div>
+                <div class="min-h-[160px] mb-8">
+                    @if($theme->getSetting('description'))
+                        <p class="text-[17px] description-line" style="color: {{ $theme->getSetting('description_color') }}"> {!! nl2br(e($theme->getSetting('description'))) !!}</p>    
+                    @endif
+                </div>
                 <div class="flex flex-col space-y-4 mb-8 justify-start items-start">
                     @if($currentScheduledConference->date_start || $currentScheduledConference->date_end)
                         <div class="flex items-center justify-start">
                             <span class="icon-banner mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1 {{ $accentTextClass }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                             </span>
@@ -73,21 +77,19 @@
                                         <span class="font-semibold {{ $accentTextClass }} text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                     @endif
                                 @endif
-                                
                             </div>
                         </div>
                     @endif
                     
                     <div class="flex items-center justify-start">
                         <span class="icon-banner mr-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1 {{ $accentTextClass }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </span>
                         <div class="text-left">
                             <span class="font-semibold {{ $accentTextClass }} text-xl">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
-                            
                         </div>
                     </div>
                 </div>
@@ -109,7 +111,7 @@
                 @endif
             </div>
         </div>
-        <div class="countdown-section absolute left-0 right-0 -bottom-52 md:-bottom-56 z-20">
+        <div class="countdown-section absolute left-0 right-0 -bottom-[220px] z-20">
 
           <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1200px] h-auto">
 
@@ -160,6 +162,30 @@
 </section>
 
 <style>
+/* Fix Line Breaking in Title and Description */
+.title-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: anywhere;        
+    word-break: break-word;        
+    hyphens: auto;                  
+}
+
+.description-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 8; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Countdown */
 @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
