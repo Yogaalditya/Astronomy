@@ -73,7 +73,7 @@
                                         <span class="font-semibold {{ $accentTextClass }} text-xl">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                     @endif
                                 @endif
-                                <div class="text-base text-white mt-1">Conference Dates</div>
+                                
                             </div>
                         </div>
                     @endif
@@ -87,7 +87,7 @@
                         </span>
                         <div class="text-left">
                             <span class="font-semibold {{ $accentTextClass }} text-xl">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
-                            <div class="text-base text-white mt-1">Conference Venue</div>
+                            
                         </div>
                     </div>
                 </div>
