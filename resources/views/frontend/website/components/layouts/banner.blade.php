@@ -81,6 +81,7 @@
                         </div>
                     @endif
                     
+                    @if ($currentScheduledConference->getMeta('location'))
                     <div class="flex items-center justify-start">
                         <span class="icon-banner mr-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1 {{ $accentTextClass }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,9 +90,10 @@
                             </svg>
                         </span>
                         <div class="text-left">
-                            <span class="font-semibold {{ $accentTextClass }} text-xl">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
+                            <span class="font-semibold {{ $accentTextClass }} text-xl">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta ('location')) }}</span>
                         </div>
                     </div>
+                    @endif
                 </div>
                 @if($theme->getSetting('banner_buttons'))
                 <div class="flex flex-col flex-wrap sm:flex-row gap-4 justify-start">
