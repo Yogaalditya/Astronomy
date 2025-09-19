@@ -30,14 +30,14 @@
 
     $imagess = $currentScheduledConference->getMedia('astronomy-countdown')->first();
     $imagecountdown = $imagess ? $imagess->getAvailableUrl(['thumb', 'thumb-xl']) : null;
-    $bannerHeight = $theme->getSetting('banner_height') ?? '800px';
+    $bannerHeight = $theme->getSetting('banner_height') ?? '850px';
     // Shared color class for title, dates, and location
     $accentTextClass = $theme->getSetting('appearance_color') ? 'color-latest' : 'text-[#BFD3E6]';
 @endphp
 
 <section 
     id="{{ $bannerId }}" 
-    class="hero-banner relative w-full -mt-[142px] flex items-center justify-center text-white mb-[260px] md:mb-[270px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
+    class="hero-banner relative w-full -mt-[142px] flex items-center justify-center text-white mb-[220px] md:mb-[270px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
     style="
         height: {{ $bannerHeight }};
         @if($bannerUrl)
@@ -52,14 +52,11 @@
     <div class="relative mx-auto px-4 z-10 w-full max-w-[1200px]">
         <div class="text-left max-w-4xl">
             <div class="w-full">
-                <div class="min-h-[120px] mb-8">
-                    <h1 class="font-bold text-3xl md:text-5xl lg:text-7xl tracking-tight drop-shadow-2xl {{ $accentTextClass }} title-line">{{ $currentScheduledConference->title }}</h1>
-                </div>
-                <div class="min-h-[160px] mb-8">
-                    @if($theme->getSetting('description'))
-                        <p class="text-[17px] description-line" style="color: {{ $theme->getSetting('description_color') }}"> {!! nl2br(e($theme->getSetting('description'))) !!}</p>    
-                    @endif
-                </div>
+                 <h1 class="font-bold text-3xl md:text-5xl lg:text-6xl tracking-tight mb-8 drop-shadow-2xl {{ $accentTextClass }} title-line">{{ $currentScheduledConference->title }}</h1>
+
+                @if($theme->getSetting('description'))
+                    <p class="description-line text-[17px] mb-8" style="color: {{ $theme->getSetting('description_color') }}"> {!! nl2br(e($theme->getSetting('description'))) !!}</p>
+                @endif
                 <div class="flex flex-col space-y-4 mb-8 justify-start items-start">
                     @if($currentScheduledConference->date_start || $currentScheduledConference->date_end)
                         <div class="flex items-center justify-start">
@@ -113,50 +110,46 @@
                 @endif
             </div>
         </div>
-        <div class="countdown-section absolute left-0 right-0 -bottom-[220px] z-20">
+    </div>
 
-          <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1200px] h-auto">
+    <div class="countdown-section absolute left-0 right-0 -bottom-44 md:-bottom-[80px] z-20">
+        <div class="mx-auto px-4 w-full max-w-[1200px]">
+            <div class="animate-slideUp delay-500 countdown-con backdrop-blur-md bg-white rounded-3xl shadow-2xl overflow-hidden w-full h-auto">
+                <div class="flex flex-col md:flex-row items-center h-full">
+                    <!-- Countdown -->
+                    <div class="countdown-container flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 py-4 md:py-6 h-full">
+                        <!-- Days -->
+                        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                            <div id="days" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                            <div class="uppercase text-xs md:text-sm text-gray-500">Days</div>
+                        </div>
+                        <!-- Divider (desktop only) -->
+                        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-12 mx-2 md:mx-4" aria-hidden="true"></div>
 
-            <div class="flex flex-col md:flex-row items-center h-full">
+                        <!-- Hours -->
+                        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                            <div id="hours" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                            <div class="uppercase text-xs md:text-sm text-gray-500">Hours</div>
+                        </div>
+                        <!-- Divider (desktop only) -->
+                        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-12 mx-2 md:mx-4" aria-hidden="true"></div>
 
-              <!-- Countdown -->
-              <div class="countdown-container flex flex-1 items-center justify-around text-center bg-white px-3 md:px-6 h-full">
+                        <!-- Minutes -->
+                        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                            <div id="minutes" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                            <div class="uppercase text-xs md:text-sm text-gray-500">Minutes</div>
+                        </div>
+                        <!-- Divider (desktop only) -->
+                        <div class="hidden md:block w-0.5 bg-gray-200 self-center h-12 mx-2 md:mx-4" aria-hidden="true"></div>
 
-                <!-- Days -->
-                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-                  <div id="days" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-                  <div class="uppercase text-xs md:text-sm text-gray-500">Days</div>
+                        <!-- Seconds -->
+                        <div class="flex flex-row md:flex-col items-center justify-center gap-1">
+                            <div id="seconds" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
+                            <div class="uppercase text-xs md:text-sm text-gray-500">Seconds</div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Divider (desktop only) -->
-                <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
-
-                <!-- Hours -->
-                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-                  <div id="hours" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-                  <div class="uppercase text-xs md:text-sm text-gray-500">Hours</div>
-                </div>
-                <!-- Divider (desktop only) -->
-                <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
-
-                <!-- Minutes -->
-                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-                  <div id="minutes" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-                  <div class="uppercase text-xs md:text-sm text-gray-500">Minutes</div>
-                </div>
-                <!-- Divider (desktop only) -->
-                <div class="hidden md:block w-0.5 bg-gray-200 self-center h-[1em] text-2xl md:text-5xl mx-2 md:mx-4" aria-hidden="true"></div>
-
-                <!-- Seconds -->
-                <div class="flex flex-row md:flex-col items-center justify-center gap-1">
-                  <div id="seconds" class="text-gradient text-2xl md:text-5xl font-bold">00</div>
-                  <div class="uppercase text-xs md:text-sm text-gray-500">Seconds</div>
-                </div>
-
-              </div>
-
             </div>
-
-          </div>
         </div>
     </div>
 
@@ -253,9 +246,15 @@
 .delay-800 { animation-delay: 0.8s; }
 .delay-900 { animation-delay: 0.9s; }
 
-/* Increase countdown height */
+/* Countdown container styling */
 .countdown-con {
-    height: 140px;
+    min-height: 120px;
+}
+
+@media (min-width: 768px) {
+    .countdown-con {
+        height: 140px;
+    }
 }
 
 
