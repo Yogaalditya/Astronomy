@@ -23,7 +23,12 @@
                             class="w-screen max-w-xs">
                             <div class="bg-white border-neutral-100/70 border-r shadow-lg h-svh overflow-y-scroll">
                                 <div class="navigation-menu-mobile ps-4 py-2 text-primary-content flex">
-                                    <x-astronomy::logo :headerLogo="$headerLogo" class="font-bold text-white" />
+                                    <x-astronomy::logo 
+                                        :headerLogo="$headerLogo"
+                                        :headerLogoAltText="app()->getCurrentConference()?->name ?? 'Leconfe'"
+                                        :homeUrl="app()->getCurrentConference()?->getHomeUrl() ?? url('/')"
+                                        class="font-bold text-[#BFD3E6]" 
+                                    />
                                     <button @@click="closeSlideOver" class="btn btn-sm btn-square btn-ghost">
                                         <x-heroicon-o-x-mark class="h-6 w-6" />
                                     </button>

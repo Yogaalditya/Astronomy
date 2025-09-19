@@ -29,8 +29,8 @@
                     <div class="hidden lg:flex items-center gap-x-4">
                         <x-astronomy::logo
                             :headerLogo="$headerLogo"
-                            :headerLogoAltText="app()->getSite()->getMeta('name')"
-                            :homeUrl="url('/')"
+                            :headerLogoAltText="app()->getCurrentConference()?->name ?? 'Leconfe'"
+                            :homeUrl="app()->getCurrentConference()?->getHomeUrl() ?? url('/')"
                             class="text-[#BFD3E6] h-8 w-auto"
                         />
                     </div>
