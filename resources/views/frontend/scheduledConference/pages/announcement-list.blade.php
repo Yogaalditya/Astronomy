@@ -26,51 +26,54 @@
         </section>
 
         <!-- Announcement Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            @forelse ($announcements as $announcement)
-                <article class="group relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
-                    <div class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent"></div>
-                    <div class="flex items-start gap-4">
-                        <div class="mt-1 shrink-0 rounded-lg bg-indigo-50 p-2 text-indigo-600 ring-1 ring-inset ring-indigo-100">
-                            <!-- Document Icon -->
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" />
-                                <path d="M14 2v6h6" />
-                            </svg>
+        @if($announcements->count() > 0)
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                @foreach ($announcements as $announcement)
+                    <article class="group relative rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <div class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent"></div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 shrink-0 rounded-lg bg-indigo-50 p-2 text-indigo-600 ring-1 ring-inset ring-indigo-100">
+                                <!-- Document Icon -->
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" />
+                                    <path d="M14 2v6h6" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0 w-full">
+                                <x-scheduledConference::announcement-summary :announcement="$announcement" />
+                            </div>
                         </div>
-                        <div class="min-w-0 w-full">
-                            <x-scheduledConference::announcement-summary :announcement="$announcement" />
-                        </div>
-                    </div>
 
-                    <div class="mt-4 flex items-center justify-between text-sm">
-                        <span class="inline-flex items-center gap-1.5 text-gray-500 group-hover:text-gray-700 transition-colors">
-                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M5 12h14" />
-                                <path d="M12 5l7 7-7 7" />
-                            </svg>
-                            Read More
-                        </span>
-                        <span class="opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-indigo-600">
-                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M9 18l6-6-6-6" />
-                            </svg>
-                        </span>
-                    </div>
-                </article>
-            @empty
-                <div class="rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center shadow-sm">
-                    <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 text-gray-400 ring-1 ring-inset ring-gray-200">
-                        <!-- Inbox Icon -->
-                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M22 12h-6l-2 3h-4l-2-3H2" />
-                            <path d="M5 7h14l2 5v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6l2-5z" />
-                        </svg>
-                    </div>
-                    <h2 class="text-lg font-semibold text-gray-900">No announcement yet</h2>
-                    <p class="mt-1 text-gray-500">The announcement will appear here once it has been created.</p>
+                        <div class="mt-4 flex items-center justify-between text-sm">
+                            <span class="inline-flex items-center gap-1.5 text-gray-500 group-hover:text-gray-700 transition-colors">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14" />
+                                    <path d="M12 5l7 7-7 7" />
+                                </svg>
+                                Read More
+                            </span>
+                            <span class="opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-indigo-600">
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </span>
+                        </div>
+                    </article>
+                @endforeach
+            </div>
+        @else
+            <!-- Empty State -->
+            <div class="rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center shadow-sm">
+                <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 text-gray-400 ring-1 ring-inset ring-gray-200">
+                    <!-- Inbox Icon -->
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 12h-6l-2 3h-4l-2-3H2" />
+                        <path d="M5 7h14l2 5v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6l2-5z" />
+                    </svg>
                 </div>
-            @endforelse
-        </div>
+                <h2 class="text-lg font-semibold text-gray-900">No announcement yet</h2>
+                <p class="mt-1 text-gray-500">The announcement will appear here once it has been created.</p>
+            </div>
+        @endif
     </div>
 </x-astronomy::layouts.main>

@@ -48,7 +48,7 @@ class AstronomyTheme extends Theme
 				->label('Description Label Color'),
 			SpatieMediaLibraryFileUpload::make('images')
 				->collection('astronomy-header')
-				->label('Upload Header Images')
+				->label('Upload Banner Images')
 				->multiple()
 				->maxFiles(4)
 				->image(),
