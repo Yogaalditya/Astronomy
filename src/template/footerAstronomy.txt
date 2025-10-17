@@ -1,0 +1,29 @@
+<div class="footer-container">
+    <div class="footer-content">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Address</h4>
+                <address>
+                  <p>Suite 1200, 200 Park Avenue</p>
+                  <p>New York, NY 10166, United States</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Support Team</p>
+                <a href="mailto:support@leconfe.com">support@leconfe.com</a>
+            </div>
+            <div class="footer-section">
+                <h4>Our social media</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img src="/storage/tinyeditor/yLuxUpoSxvIBJOCEWqoUwudvDurHn2XIRWyhD3z7.png" alt="Social Media Icon 1" />
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <img src="/storage/tinyeditor/6UxtXwlZ7rjv9haF0Lkp4SbI6JjYTHYp8LUOOlcR.png" alt="Social Media Icon 2" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
