@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    background-color: #FAFAFA;
+    background-color: #F5F5F5;
 }
 
 .sponsors-container {
@@ -1373,5 +1373,178 @@ body {
     .ny2026-cards--grid {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+}
+
+/* ========== EVENT SCHEDULE STYLES ========== */
+.event-schedule-section {
+  background-color: #F5F5F5;
+  font-family: 'Poppins', sans-serif;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Header */
+.event-schedule-header {
+  margin-bottom: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: start;
+  align-items: flex-start;
+}
+
+.event-schedule-title {
+  font-size: 2rem !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.055em;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.event-schedule-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.5rem;
+  height: 0.2rem;
+  background-color: oklch(var(--p));
+  border-radius: 9999px;
+}
+
+@media (min-width: 1024px) { .event-schedule-title { font-size: 2.5rem; } }
+
+.event-schedule-subtitle {
+  color: #8c8c8c;
+  font-size: 15px;
+  margin-top: 0;
+  text-align: start;
+}
+
+/* Card Container */
+.event-schedule-card {
+  width: 80%;
+  max-width: 1000px;
+  background: #fff;
+  margin: 20px auto;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+/* Left Time Box */
+.event-schedule-day-box {
+  width: 200px;
+  color: #fff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-schedule-day-box.primary {
+  background-color: oklch(var(--p));
+  color: #ffffff;
+}
+
+.event-schedule-day-box.secondary {
+  background-color: #1b2a41;
+}
+
+.event-schedule-day-box p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.event-schedule-day-box h4 {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+/* Middle Content */
+.event-schedule-content {
+  flex: 1;
+  padding: 30px 25px;
+}
+
+.event-schedule-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.event-schedule-content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.event-schedule-content a {
+  color: oklch(var(--p));
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Right Avatar */
+.event-schedule-avatar {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.event-schedule-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+/* Button */
+.event-schedule-button {
+  margin-top: 40px;
+}
+
+.event-schedule-button button {
+  background-color: #1b2a41;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.event-schedule-button button:hover {
+  background-color: oklch(var(--p));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .event-schedule-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .event-schedule-day-box {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .event-schedule-avatar {
+    padding: 20px 0;
   }
 }

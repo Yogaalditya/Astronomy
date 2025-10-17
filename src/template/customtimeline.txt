@@ -1,0 +1,67 @@
+<body>
+  <section class="event-schedule-section">
+    <div class="event-schedule-header">
+      <h2 class="event-schedule-title">Event Info Schedule</h2>
+      <p class="event-schedule-subtitle">The event Schedule will be update</p>
+    </div>
+
+    <div class="event-schedule-card day1">
+      <div class="event-schedule-day-box secondary">
+        <p>FROM 8:30 TO 16:30</p>
+        <h4 class="text-white">Day 1</h4>
+      </div>
+      <div class="event-schedule-content">
+        <h3>Topic 1</h3>
+        <p>
+          Geological practices in Gemstones mining, Gemstone sales and market trends/models,
+          Trends in Gemstones handling and processing, Mining and extraction practices by
+          artisanal and small-scale miner, gemstone cutting and polishing.
+        </p>
+        <a href="#">LEARN MORE..</a>
+      </div>
+      <div class="event-schedule-avatar">
+        <img src="https://via.placeholder.com/100x100?text=Avatar" alt="Speaker">
+      </div>
+    </div>
+
+    <div class="event-schedule-card day2">
+      <div class="event-schedule-day-box primary">
+        <p>FROM 8:30 TO 16:30</p>
+        <h4 class="text-white">Day 2</h4>
+      </div>
+      <div class="event-schedule-content">
+        <h3>Topic 2</h3>
+        <p>
+          Training in gemstones value chain activities, gemstone treatment and enhancement,
+          local communities in downstream gemstones value chain activities.
+        </p>
+        <a href="#">LEARN MORE..</a>
+      </div>
+      <div class="event-schedule-avatar">
+        <img src="https://via.placeholder.com/100x100?text=Avatar" alt="Speaker">
+      </div>
+    </div>
+
+    <div class="event-schedule-card day3">
+      <div class="event-schedule-day-box secondary">
+        <p>FROM 8:30 TO 16:30</p>
+        <h4 class="text-white">Day 3</h4>
+      </div>
+      <div class="event-schedule-content">
+        <h3>Topic 3</h3>
+        <p>
+          Funding and financing of gemstones value chain activities, gemstone marketing and branding,
+          gemstone industry outlook, Responsible Mining and Sustainability in gemstones mining.
+        </p>
+        <a href="#">LEARN MORE..</a>
+      </div>
+      <div class="event-schedule-avatar">
+        <img src="https://via.placeholder.com/100x100?text=Avatar" alt="Speaker">
+      </div>
+    </div>
+
+    <div class="event-schedule-button">
+      <button>VIEW ALL DETAILS</button>
+    </div>
+  </section>
+</body>

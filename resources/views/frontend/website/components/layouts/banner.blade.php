@@ -30,14 +30,14 @@
 
     $imagess = $currentScheduledConference->getMedia('astronomy-countdown')->first();
     $imagecountdown = $imagess ? $imagess->getAvailableUrl(['thumb', 'thumb-xl']) : null;
-    $bannerHeight = $theme->getSetting('banner_height') ?? '850px';
+    $bannerHeight = $theme->getSetting('banner_height') ?? '900px';
     // Shared color class for title, dates, and location
     $accentTextClass = $theme->getSetting('appearance_color') ? 'color-latest' : 'text-[#BFD3E6]';
 @endphp
 
 <section 
     id="{{ $bannerId }}" 
-    class="hero-banner relative w-full -mt-[142px] flex items-center justify-center text-white mb-[220px] md:mb-[270px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
+    class="hero-banner relative w-full -mt-[142px] flex items-center justify-center text-white mb-[220px] md:mb-[140px] @if(!$bannerUrl) bg-gradient-to-br from-indigo-500 to-purple-600 @endif"
     style="
         height: {{ $bannerHeight }};
         @if($bannerUrl)
