@@ -21,12 +21,7 @@
                         class="inline-flex items-center justify-center px-4 h-8 leading-none transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 ease-out duration-300 font-bold"
                         :href="$item->getUrl()"
                         >
-                        @if(!$avatar || !$isFirstDisplayedItem)
-                            <span class="leading-none">{{ $item->getLabel() }}</span>
-                        @else
-                            <span class="sr-only">{{ $item->getLabel() }}</span>
-                            <x-heroicon-o-user-circle class="h-6 w-6 self-center" />
-                        @endif
+                        <span class="leading-none">{{ $item->getLabel() }}</span>
                     </x-astronomy::link>
                 </li>
                 @php $isFirstDisplayedItem = false; @endphp
@@ -40,12 +35,7 @@
                         @@click="open = !open"
                         class="inline-flex items-center justify-center h-8 leading-none transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-1 ease-out duration-300 font-bold"
                         >
-                        @if(!$avatar || !$isFirstDisplayedItem)
-                            <span class="leading-none">{{ $item->getLabel() }}</span>
-                        @else
-                            <span class="sr-only">{{ $item->getLabel() }}</span>
-                            <x-heroicon-o-user-circle class="h-6 w-6 self-center" />
-                        @endif
+                        <span class="leading-none">{{ $item->getLabel() }}</span>
                         <x-heroicon-m-chevron-down class="transition h-3 w-3 self-center" x-bind:class="{ '-rotate-180': open}" />
                     </button>
                     <div 
