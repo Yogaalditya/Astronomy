@@ -1,19 +1,20 @@
 <section class="pricing-section">
-  <div class="pricing-header">
-    <h2 class="pricing-title">Choose Your Ticket</h2>
-    <p class="pricing-subtitle">
-      Select the perfect ticket for the Welcome 2026 event. Whether you're joining individually,
-      with colleagues, or seeking premium access, we have options to make your New Year celebration memorable.
-    </p>
-  </div>
+  <div class="pricing-container">
+    <div class="pricing-header">
+      <h2 class="pricing-title">Choose Your Ticket</h2>
+      <p class="pricing-subtitle">
+        Select the perfect ticket for the Welcome 2026 event. Whether you're joining individually,
+        with colleagues, or seeking premium access, we have options to make your New Year celebration memorable.
+      </p>
+    </div>
 
-  <div class="pricing-cards">
+    <div class="pricing-cards">
     <!-- Free Ticket -->
     <div class="pricing-card pricing-free">
       <h3 class="plan-name">Free Ticket</h3>
       <p class="plan-desc">Perfect for virtual participation and basic access.</p>
       <p class="plan-price">Free</p>
-      <ul class="plan-features">
+    <ul class="plan-features">
         <li>Virtual access to main sessions</li>
         <li>1 Participant</li>
       </ul>
@@ -57,5 +58,6 @@
       </ul>
       <button class="plan-btn">Register VIP</button>
     </div>
+  </div>
   </div>
 </section>

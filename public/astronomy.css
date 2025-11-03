@@ -29,6 +29,12 @@ body {
   padding: 0 1rem;
 }
 
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .icon-banner {
     color: oklch(var(--p));
 }
@@ -1580,7 +1586,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 32px;
 }
 
 .pricing-section .pricing-card {
@@ -1588,7 +1594,7 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 16px;
   padding: 40px 30px;
-  width: 260px;
+  width: 268px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   position: relative;
   transition: all 0.3s ease;
