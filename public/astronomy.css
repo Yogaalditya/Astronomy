@@ -1380,18 +1380,20 @@ body {
 .event-schedule-section {
   background-color: #F5F5F5;
   font-family: 'Poppins', sans-serif;
-  padding: 60px 0;
+  padding: 60px 1rem;
   text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Header */
 .event-schedule-header {
   margin-bottom: 40px;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  text-align: start;
-  align-items: flex-start;
+  text-align: center;
+  align-items: center;
 }
 
 .event-schedule-title {
@@ -1408,7 +1410,8 @@ body {
 .event-schedule-title::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   width: 3.5rem;
   height: 0.2rem;
@@ -1422,13 +1425,13 @@ body {
   color: #8c8c8c;
   font-size: 15px;
   margin-top: 0;
-  text-align: start;
+  text-align: center;
 }
 
 /* Card Container */
 .event-schedule-card {
-  width: 80%;
-  max-width: 1000px;
+  width: 95%;
+  max-width: 1230px;
   background: #fff;
   margin: 20px auto;
   display: flex;
@@ -1547,4 +1550,141 @@ body {
   .event-schedule-avatar {
     padding: 20px 0;
   }
+}
+
+/* ======= PRICING SECTION (SPECIFIC) ======= */
+.pricing-section {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pricing-section .pricing-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.pricing-section .pricing-subtitle {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.pricing-section .pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.pricing-section .pricing-card {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 260px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-section .pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-section .plan-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0055ff;
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.pricing-section .plan-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pricing-section .plan-desc {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.pricing-section .plan-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.pricing-section .plan-price span {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: normal;
+}
+
+.pricing-section .plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.pricing-section .plan-features li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  position: relative;
+  padding-left: 20px;
+}
+
+.pricing-section .plan-features li::before {
+  content: "✔";
+  color: #007bff;
+  font-size: 0.8rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pricing-section .plan-btn {
+  background-color: #0055ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pricing-section .plan-btn:hover {
+  background-color: #003fcc;
+}
+
+/* ====== DIFFERENT STYLE FOR FREE PLAN BUTTON ====== */
+.pricing-section .pricing-free .plan-btn {
+  background-color: white;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.pricing-section .pricing-free .plan-btn:hover {
+  background-color: #f1f1f1;
 }
