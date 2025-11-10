@@ -1612,7 +1612,7 @@ body {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #0055ff;
+  background-color: oklch(var(--p));
   color: white;
   font-size: 0.75rem;
   padding: 4px 12px;
@@ -1671,7 +1671,7 @@ body {
 }
 
 .pricing-section .plan-btn {
-  background-color: #0055ff;
+  background-color: oklch(var(--p));
   color: white;
   border: none;
   border-radius: 8px;
@@ -1684,7 +1684,8 @@ body {
 }
 
 .pricing-section .plan-btn:hover {
-  background-color: #003fcc;
+  background-color: oklch(var(--p));
+  filter: brightness(0.8);
 }
 
 /* ====== DIFFERENT STYLE FOR FREE PLAN BUTTON ====== */
